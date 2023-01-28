@@ -1,4 +1,5 @@
-download files
+download files to local pc
+open windows cmd/terminal 
 cd to client
-npm install bootstrap
-npm install react-router-dom
+npm install --> will install all the packages ive specified in the package json file
+ready to code front end
