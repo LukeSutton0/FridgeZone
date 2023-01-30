@@ -3,9 +3,9 @@ import './App.css';
 
 //module components
 //{MainHeader}
-import MainHeader from './header.js'
-import SignUp from './signUp.js'
-import MainFooter from './footer.js'
+import MainHeader from './components/header/MainHeader.js'
+import SignUp from './components/signUp/SignUp.js'
+import MainFooter from './components/footer/Footer.js'
 function App() {
   return (
     <div className="App">

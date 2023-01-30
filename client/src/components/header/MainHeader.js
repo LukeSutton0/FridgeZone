@@ -1,14 +1,15 @@
 import React from "react";
 import logo from "./logo.png";
+import classes from './MainHeader.module.css'
 const MainHeader = () =>{
     let companyName = 'FridgeZone';
 
     return(
-        <div class="nav">
-            <div class="logoWrapper">
+        <div className={classes.nav}>
+            <div className={classes.logoWrapper}>
                 <img src={logo}/>
             </div>
-            <h3 id="headerTitle">{companyName}</h3>
+            <h3 idName={classes.headerTitle}>{companyName}</h3>
         </div>
     )
 }
