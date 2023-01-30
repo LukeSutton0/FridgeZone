@@ -1,13 +1,15 @@
 import React from "react";
-
+import logo from "./logo.png";
 const MainHeader = () =>{
     let companyName = 'FridgeZone';
 
     return(
-        <div id="header">
-        <img src={"./logo.jpeg"}/>
-        <h3>{companyName}</h3>
-      </div>
+        <div class="nav">
+            <div class="logoWrapper">
+                <img src={logo}/>
+            </div>
+            <h3 id="headerTitle">{companyName}</h3>
+        </div>
     )
 }
 
