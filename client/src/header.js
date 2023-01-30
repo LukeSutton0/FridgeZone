@@ -1,6 +1,6 @@
 import React from "react";
 
-const mainHeader = () =>{
+const MainHeader = () =>{
     let companyName = 'FridgeZone';
 
     return(
@@ -11,4 +11,4 @@ const mainHeader = () =>{
     )
 }
 
-export default mainHeader;
+export default MainHeader;

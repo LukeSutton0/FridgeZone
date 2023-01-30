@@ -2,13 +2,15 @@ import React from 'react';
 import './App.css';
 
 //module components
+//{MainHeader}
 import MainHeader from './header.js'
-import signUp from './signUp.js'
+import SignUp from './signUp.js'
 
 function App() {
   return (
     <div className="App">
-      {MainHeader}
+      <MainHeader/>
+      <SignUp/>
       
     </div>
   );
