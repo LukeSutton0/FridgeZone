@@ -1,9 +1,9 @@
 import React from "react";
-
+import classes from './SignUp.module.css'
 const SignUp = () =>{
     return(
-        <div id="inputBox">
-          <h1>Input</h1>
+        <div className={classes.inputBox}>
+          <h1>Sign Up</h1>
           <p>para</p>
         </div>
     )

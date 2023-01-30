@@ -9,7 +9,7 @@ const MainHeader = () =>{
             <div className={classes.logoWrapper}>
                 <img src={logo}/>
             </div>
-            <h3 idName={classes.headerTitle}>{companyName}</h3>
+            <h3 className={classes.headerTitle}>{companyName}</h3>
         </div>
     )
 }
