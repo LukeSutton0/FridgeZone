@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "./logo.png";
+import logo from "../../Assets/logo.png";
 import classes from './MainHeader.module.css'
 const MainHeader = () =>{
     let companyName = 'FridgeZone';
