@@ -4,7 +4,7 @@ import Button from 'react-bootstrap/Button';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 
-//add comments so we know whats going on with you initials
+//add comments so we know whats going on with your initials
 const SignUp = () =>{
   let navigate = useNavigate();
     return(
