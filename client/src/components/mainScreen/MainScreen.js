@@ -13,7 +13,7 @@ const SignUp = () =>{
             navigate("/signUp");
             }}>
             SignUp</Button>
-          <Button variant="secondary" onClick={()=> {
+          <Button variant="primary" onClick={()=> {
             navigate("/login");
             }}>
             Login</Button>

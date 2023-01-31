@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/logo.png";
+// import logo from "../../Assets/logo.PNG";
 import classes from './MainHeader.module.css'
 const MainHeader = () =>{
     let companyName = 'FridgeZone';
@@ -7,7 +7,7 @@ const MainHeader = () =>{
     return(
         <div className={classes.nav}>
             <div className={classes.logoWrapper}>
-                <img src={logo}/>
+                {/* <img src={logo.PNG}/> */}
             </div>
             <h3 className={classes.headerTitle}>{companyName}</h3>
         </div>
