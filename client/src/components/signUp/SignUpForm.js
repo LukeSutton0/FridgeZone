@@ -38,41 +38,44 @@ const SignUpForm = () => {
 
     return (
         <Fragment>
-            <form onSubmit={handleSubmit}>
-                <label>Username:</label>
-                <input 
-                    type="text"
-                    required
-                    value={UserName}
-                    placeholder = "Johndoe123"
-                    onChange={(e) => setUserName(e.target.value)}/>
-                <label>Password:</label>
-                <input 
-                    type="text"
-                    required
-                    value={Password}
-                    placeholder = "Password123"
-                    onChange={(e) => setPassword(e.target.value)}/>
-                <select
-                value={JobTitle}
-                onChange={(e)=>setJobTitle(e.target.value)}>
-                    <option value="DeliveryDriver">DeliveryDriver</option>
-                    <option value="HeadChef">HeadChef</option>
-                    <option value="Chef">Chef</option>
-                    <option value="Admin">Admin</option>
-                    <option value="Supplier">Supplier</option>
-                    <option value="HealthAndSafetyOfficer">Health and Safety Officer</option>
-                </select>
-                <label>Full Name:</label>
-                <input 
-                    type="text"
-                    required
-                    value={FullName}
-                    placeholder = "Johnathon Doedecahedron"
-                    onChange={(e) => setFullName(e.target.value)}/>
+            <h1>SIGN UP</h1>
+            <div className={classes.form}>
+                <form onSubmit={handleSubmit}>
+                    <label>Username:</label>
+                    <input 
+                        type="text"
+                        required
+                        value={UserName}
+                        placeholder = "Johndoe123"
+                        onChange={(e) => setUserName(e.target.value)}/>
+                    <label>Password:</label>
+                    <input 
+                        type="text"
+                        required
+                        value={Password}
+                        placeholder = "Password123"
+                        onChange={(e) => setPassword(e.target.value)}/>
+                    <select
+                    value={JobTitle}
+                    onChange={(e)=>setJobTitle(e.target.value)}>
+                        <option value="DeliveryDriver">DeliveryDriver</option>
+                        <option value="HeadChef">HeadChef</option>
+                        <option value="Chef">Chef</option>
+                        <option value="Admin">Admin</option>
+                        <option value="Supplier">Supplier</option>
+                        <option value="HealthAndSafetyOfficer">Health and Safety Officer</option>
+                    </select>
+                    <label>Full Name:</label>
+                    <input 
+                        type="text"
+                        required
+                        value={FullName}
+                        placeholder = "Johnathon Doedecahedron"
+                        onChange={(e) => setFullName(e.target.value)}/>
 
-                <button>Submit</button>
-            </form>
+                    <button>Submit</button>
+                </form>
+            </div>
         </Fragment>
     )
 
