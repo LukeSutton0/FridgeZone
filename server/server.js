@@ -1,21 +1,23 @@
 const express = require("express");
 
+require("dotenv").config({ path: "./config.env" });
+const port = process.env.PORT || 5000;
+
 const app = express(); //starts app
 
 //const cors = require("cors");
 
-require("dotenv").config({ path: "./config.env" });
-const port = process.env.PORT || 5000;
+//middleware
+app.use(express.json());
+// app.use(cors());
+
 
 
 app.listen(process.env.PORT,() =>{
     console.log('listening on port',process.env.PORT)
 })
 
-// app.use(cors());
-// app.use(express.json());
-
-app.use(require("./routes/aRoute.js"));
+app.use('/home/stock',require("./routes/aRoute.js"));
 
 
 // // get driver connection
