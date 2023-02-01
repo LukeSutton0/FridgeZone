@@ -10,7 +10,8 @@ import ErrorPage  from './components/error/ErrorPage.js'
 import { BrowserRouter as Router,Routes,Route, Link } from 'react-router-dom';
 
 import SignUp from './components/signUp/SignUp.js'
-import Login from './components/Login/login';
+
+import Login from './components/login/Login.js'
 
 function App() {
   return (
