@@ -16,6 +16,7 @@ Report page for health and safety,
 Stock page for chef,
 Admin page for headchef,
 Open Door page for drivers,
+Tutorial page for navigation applicaiton
 
 
 styling of pages
