@@ -6,7 +6,9 @@ const SignUp = () =>{
         <div className={classes.inputBox}>
           <SignUpForm/>
         </div>
-    )
+      
+   
+  )
 }
 
 export default SignUp;
