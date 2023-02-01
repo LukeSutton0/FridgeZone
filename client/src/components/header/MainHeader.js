@@ -1,5 +1,5 @@
 import React from "react";
-import logo from "../../Assets/logo.png";
+import logo from "../../Assets/logo2.png";
 import classes from './MainHeader.module.css'
 const MainHeader = () =>{
     let companyName = 'FridgeZone';
@@ -7,9 +7,8 @@ const MainHeader = () =>{
     return(
         <div className={classes.nav}>
             <div className={classes.logoWrapper}>
-                <img src={logo}/>
+                <img src={logo} width="320" height="150"/>
             </div>
-            <h3 className={classes.headerTitle}>{companyName}</h3>
         </div>
     )
 }
