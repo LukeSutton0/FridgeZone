@@ -2,7 +2,7 @@ import React, { Fragment} from "react";
 import { useState } from "react";
 import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
-import classes from './login.module.css'
+import classes from './Login.module.css'
 
 const LoginForm = () => {
 
