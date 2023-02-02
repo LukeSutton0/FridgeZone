@@ -70,7 +70,7 @@ const updateStockItem = async(req,res) =>{
 
     const stockItem = await StockItem.findOneAndUpdate({_id: id},{
         ...req.body
-    },{new:true})
+    })
     if(!stockItem){
         return res.status(404).json({error:`No Item Found by Id ${id}`})
     }

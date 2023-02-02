@@ -3,14 +3,22 @@ require("dotenv").config({ path: "./config.env" });
 const express = require("express");
 const mongoose = require("mongoose");
 const port = process.env.PORT || 5000;
+const stockItemRoutes = require("./routes/stockItems.js")
+const userRoutes = require("./routes/user.js")
+
 
 const app = express(); //starts app
-
 //const cors = require("cors");
+
 
 //middleware
 app.use(express.json());
 // app.use(cors());
+
+//routes
+app.use('/home/stock', stockItemRoutes);
+app.use('/home/user',userRoutes)
+
 
 
 //connect to db
@@ -24,17 +32,4 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
-app.use('/home/stock',require("./routes/stockItems.js"));
-
-
-// // get driver connection
-// const dbo = require("./db/conn");
- 
-// app.listen(port, () => {
-//   // perform a database connection when server starts
-//   dbo.connectToServer(function (err) {
-//     if (err) console.error(err);
- 
-//   });
-//   console.log(`Server is running on port: ${port}`);
-// });
+    
