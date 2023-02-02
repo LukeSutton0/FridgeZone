@@ -14,7 +14,6 @@ app.use(express.json());
 
 
 //connect to db
-console.log(process.env.MONGO_URI)
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{
         app.listen(process.env.PORT,() =>{
@@ -25,7 +24,7 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
-app.use('/home/stock',require("./routes/aRoute.js"));
+app.use('/home/stock',require("./routes/stockItems.js"));
 
 
 // // get driver connection
