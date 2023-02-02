@@ -6,15 +6,13 @@ import classes from './Login.module.css'
 
 const LoginForm = () => {
 
-    const [UserName, setUserName] = useState('');
-    const [Password, setPassword] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
 
     const handleSubmit = (e) =>{
         e.preventDefault() //stops page refreshing
-        const data = {UserName,Password}
-        console.log(data);
+        const data = {username,password}
         //error checking client side
-        // then send http
         sendPost(data)
     }
 
@@ -40,14 +38,14 @@ const LoginForm = () => {
                     <input 
                         type="text"
                         required
-                        value={UserName}
+                        value={username}
                         placeholder = "Username"
-                        onChange={(e) => setUserName(e.target.value)}/>
+                        onChange={(e) => setUsername(e.target.value)}/>
                     <label className={classes.formLabel}>Password</label>
                     <input 
                         type="password"
                         required
-                        value={Password}
+                        value={password}
                         placeholder = "Password"
                         onChange={(e) => setPassword(e.target.value)}/>
 

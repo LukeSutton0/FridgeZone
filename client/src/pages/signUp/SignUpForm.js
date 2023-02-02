@@ -7,17 +7,15 @@ import classes from './SignUp.module.css'
 
 const SignUpForm = () => {
 
-    const [UserName, setUserName] = useState('');
-    const [Password, setPassword] = useState('');
-    const [JobTitle, setJobTitle] = useState('');
-    const [FullName, setFullName] = useState('');
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [jobtitle, setJobTitle] = useState('');
+    const [fullname, setFullName] = useState('');
 
     const handleSubmit = (e) =>{
         e.preventDefault() //stops page refreshing
-        const data = {UserName,Password,JobTitle,FullName}
-        console.log(data);
+        const data = {username,password,jobtitle,fullname}
         //error checking client side
-        // then send http
         sendPost(data)
     }
 
@@ -45,19 +43,19 @@ const SignUpForm = () => {
                     <input 
                         type="text"
                         required
-                        value={UserName}
+                        value={username}
                         placeholder = "Username"
-                        onChange={(e) => setUserName(e.target.value)}/>
+                        onChange={(e) => setUsername(e.target.value)}/>
                     <label className={classes.formLabel}>Password</label>
                     <input 
                         type="password"
                         required
-                        value={Password}
+                        value={password}
                         placeholder = "Password"
                         onChange={(e) => setPassword(e.target.value)}/>
                     <label className={classes.formLabel}>Job Title</label>
                     <select
-                    value={JobTitle}
+                    value={jobtitle}
                     onChange={(e)=>setJobTitle(e.target.value)}>
                         <option value="DeliveryDriver">DeliveryDriver</option>
                         <option value="HeadChef">HeadChef</option>
@@ -70,7 +68,7 @@ const SignUpForm = () => {
                     <input 
                         type="text"
                         required
-                        value={FullName}
+                        value={fullname}
                         placeholder = "Full Name"
                         onChange={(e) => setFullName(e.target.value)}/>
 
