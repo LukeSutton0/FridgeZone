@@ -1,7 +1,0 @@
-Use this folder structure to store components
-
-eg
-
-components/header/header.js
-and 
-components/header/header.css
