@@ -16,8 +16,8 @@ app.use(express.json());
 // app.use(cors());
 
 //routes
-app.use('/home/stock', stockItemRoutes);
-app.use('/home/user',userRoutes)
+app.use('/stock', stockItemRoutes);
+app.use('/user',userRoutes)
 
 
 

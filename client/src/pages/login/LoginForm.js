@@ -9,11 +9,11 @@ const LoginForm = () => {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault() //stops page refreshing
         const data = {username,password}
         //error checking client side
-        sendPost(data)
+        //sendPost(data)
     }
 
 
