@@ -4,7 +4,7 @@ const ErrorContent = () =>{
 
     return(
         <div>
-            <p>Error</p>
+            <p>Page Unavailable, ensure you are logged in</p>
       </div>
     )
 }
