@@ -12,7 +12,7 @@ const userSchema = new Schema({
         type:String,
         required:true
     },
-    jobtype:{
+    jobtitle:{
         type:String,
         require:true
 
@@ -25,9 +25,9 @@ const userSchema = new Schema({
 
 //static signup method
 
-userSchema.statics.signUp = async function(username,password,jobtype,fullname) {
+userSchema.statics.signUp = async function(username,password,jobtitle,fullname) {
     //validation
-    if(!username || !password || !jobtype || !fullname){
+    if(!username || !password || !jobtitle || !fullname){
         throw Error ('All fields must be filled')
     }
     if (!validator.isStrongPassword(password,{minLength:4})){
@@ -51,7 +51,7 @@ userSchema.statics.signUp = async function(username,password,jobtype,fullname) {
     const user = await this.create({
         username,
         password:hash,
-        jobtype,
+        jobtitle,
         fullname
     })
     return user
