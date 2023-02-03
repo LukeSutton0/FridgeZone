@@ -23,7 +23,7 @@ function App() {
             </Route>
             <Route path="*" element={<ErrorContent/>}>
             </Route>
-            <Route path="/signUp" element={<SignUp/>}>
+            <Route path="/signup" element={<SignUp/>}>
             </Route>
             <Route path="/login" element={<Login/>}>
             </Route>

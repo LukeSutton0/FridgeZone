@@ -1,3 +1,15 @@
+.inputBox {
+  margin: auto;
+  margin-top: 10vh;
+  padding: 16px;
+  box-sizing: border-box;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px #ccc;
+  max-width: 800px;
+  height: 350px;
+}
+
+
 h1 {
     text-align: center;
     color: rgb(0, 0, 0);
@@ -31,15 +43,4 @@ h1 {
     display: inline-block;
     font-size: 16px;
     margin-top: 3vh;
-  }
-
-  .inputBox {
-    margin: auto;
-    margin-top: 10vh;
-    padding: 16px;
-    box-sizing: border-box;
-    border-radius: 5px;
-    box-shadow: 0 2px 5px #ccc;
-    max-width: 800px;
-    height: 350px;
   }

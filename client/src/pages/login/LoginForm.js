@@ -1,32 +1,19 @@
-import React, { Fragment} from "react";
-import { useState } from "react";
+import React, { Fragment ,useState} from "react";
+import { useLogin } from "../../hooks/useLogin";
 import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 
 import classes from './Login.module.css'
 
 const LoginForm = () => {
 
-    const [username, setUsername] = useState('');
-    const [password, setPassword] = useState('');
+    const [username, setUsername] = useState('')
+    const [password, setPassword] = useState('')
+    const {login,error,isLoading} = useLogin()
 
-    const handleSubmit = (e) =>{
+    const handleSubmit = async (e) =>{
         e.preventDefault() //stops page refreshing
-        const data = {username,password}
+        await login(username,password)
         //error checking client side
-        sendPost(data)
-    }
-
-
-    const sendPost= (data) =>{
-        fetch('http://localhost:3000',{
-            method: "POST",
-            headers:{
-                'Accept':'application/json',
-                'Content-Type': 'application/json',
-            },
-            credentials: "omit",
-            body: JSON.stringify(data)
-        })
     }
     
     return (
@@ -49,7 +36,8 @@ const LoginForm = () => {
                         placeholder = "Password"
                         onChange={(e) => setPassword(e.target.value)}/>
 
-                    <button className={classes.btn}>Submit</button>
+                    <button className={classes.btn} disabled={isLoading}>Submit</button>
+                    {error && <div className="error">{error}</div>}
                 </form>
             </div>
         </Fragment>

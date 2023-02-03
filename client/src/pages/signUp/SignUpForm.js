@@ -1,8 +1,6 @@
-//import { render } from "@testing-library/react";
-import React, { Fragment} from "react";
-import { useState } from "react";
-import { scryRenderedComponentsWithType } from "react-dom/test-utils";
-
+import React, { Fragment, useState } from "react";
+//import { scryRenderedComponentsWithType } from "react-dom/test-utils";
+import { useSignUp } from "../../hooks/useSignUp";
 import classes from './SignUp.module.css'
 
 const SignUpForm = () => {
@@ -12,25 +10,14 @@ const SignUpForm = () => {
     const [jobtitle, setJobTitle] = useState('');
     const [fullname, setFullName] = useState('');
 
-    const handleSubmit = (e) =>{
+    const {signup,error,isLoading} = useSignUp()
+
+    const handleSubmit = async (e) =>{
         e.preventDefault() //stops page refreshing
-        const data = {username,password,jobtitle,fullname}
-        //error checking client side
-        sendPost(data)
+        //call hook
+        await signup(username,password,jobtitle,fullname)
     }
 
-
-    const sendPost= (data) =>{
-        fetch('http://localhost:3000',{
-            method: "POST",
-            headers:{
-                'Accept':'application/json',
-                'Content-Type': 'application/json',
-            },
-            credentials: "omit",
-            body: JSON.stringify(data)
-        })
-    }
 
 
 
@@ -72,7 +59,8 @@ const SignUpForm = () => {
                         placeholder = "Full Name"
                         onChange={(e) => setFullName(e.target.value)}/>
 
-                    <button className={classes.btn}>Submit</button>
+                    <button className={classes.btn} disabled={isLoading}>Submit</button>
+                    {error && <div className="error">{error}</div>}
                 </form>
             </div>
         </Fragment>
