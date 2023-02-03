@@ -19,12 +19,8 @@ const SignUpForm = () => {
         //call hook
         await signup(username,password,jobtitle,fullname)
         navigate('/home');
-
     }
-
-
-
-
+    
     return (
         <Fragment>
             <h1>SIGN UP</h1>

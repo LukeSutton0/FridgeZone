@@ -6,6 +6,7 @@ import MainHeader from './components/header/MainHeader.js'
 import MainFooter from './components/footer/Footer.js'
 import MainScreen from './pages/mainScreen/MainScreen.js'
 import ErrorContent  from './components/error/ErrorContent.js'
+import checkForAuth from './hooks/checkForAuth.js'
 
 import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
@@ -18,7 +19,7 @@ function App() {
         <MainHeader/>
         <div className="content">
           <Routes>
-            <Route path="/" element={<MainScreen/>}>
+            <Route path="/" element={<MainScreen/>} onEnter={checkForAuth}>
             </Route>
             <Route path="*" element={<ErrorContent/>}>
             </Route>

@@ -17,7 +17,7 @@ const MainFooter = () =>{
 
     return(
         <div className={classes.footerContainer}>
-            <p>Footer</p>
+            <p>Someone Style This Footer Please</p>
             {user && (
             <div>
                 <span>{user.username}</span>
