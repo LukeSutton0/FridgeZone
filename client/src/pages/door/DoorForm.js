@@ -4,7 +4,8 @@ const DeliveryRecord = () => {
   const [formData, setFormData] = useState({
     itemName: "",
     quantity: "",
-    expiryDate: ""
+    expiryDate: "",
+    supplier: ""
   });
 
   const handleChange = e => {
@@ -41,6 +42,13 @@ const DeliveryRecord = () => {
         placeholder="Expiry Date"
         name="expiryDate"
         value={formData.expiryDate}
+        onChange={handleChange}
+      />
+      <input
+        type="text"
+        placeholder="Supplier"
+        name="supplier"
+        value={formData.supplier}
         onChange={handleChange}
       />
       <button type="submit">Record Item</button>
