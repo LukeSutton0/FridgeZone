@@ -12,6 +12,8 @@ import SignUp from './pages/signUp/SignUp.js'
 
 import Login from './pages/login/Login.js'
 
+import Door from './pages/door/Door.js'
+
 function App() {
   return (
     <Router>
@@ -26,6 +28,8 @@ function App() {
             <Route path="/signup" element={<SignUp/>}>
             </Route>
             <Route path="/login" element={<Login/>}>
+            </Route>
+            <Route path="/door" element={<Door/>}>
             </Route>
           </Routes>
         </div>

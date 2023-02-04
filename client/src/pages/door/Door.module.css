@@ -1,0 +1,34 @@
+h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding-top: 1vh;
+  font-weight: bold;
+  font-size: 5vw;
+  margin-bottom: 6vh;
+}
+.doorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.door {
+  width: 100px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.5s;
+}
+
+.open {
+  background-image: url('../../Assets/fridge_open.png');
+  width: 200px;
+  height: 200px;
+}
+
+.closed {
+  background-image: url('../../Assets/fridge_closed.png');
+  width: 150px;
+  height: 200px;
+}

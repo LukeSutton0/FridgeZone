@@ -15,7 +15,7 @@ const MainFooter = () =>{
 
     return(
         <div className={classes.footerContainer}>
-            <p>Footer</p>
+           <Link to="">Home</Link>
             {user && (
             <div>
                 <span>{user.username}</span>
