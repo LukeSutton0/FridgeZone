@@ -14,6 +14,8 @@ import Login from './pages/login/Login.js'
 
 import Door from './pages/door/Door.js'
 
+import Details from './pages/details/Details.js'
+
 
 function App() {
   return (
@@ -31,6 +33,8 @@ function App() {
             <Route path="/login" element={<Login/>}>
             </Route>
             <Route path="/door" element={<Door/>}>
+            </Route>
+            <Route path="/details" element={<Details/>}>
             </Route>
           </Routes>
         </div>
