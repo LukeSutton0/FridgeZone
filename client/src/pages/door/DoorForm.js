@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 const DeliveryRecord = () => {
   const [formData, setFormData] = useState({
-    itemName: "",
+    name: "",
     quantity: "",
     expiryDate: "",
     supplier: ""
@@ -26,8 +26,8 @@ const DeliveryRecord = () => {
       <input
         type="text"
         placeholder="Item Name"
-        name="itemName"
-        value={formData.itemName}
+        name="name"
+        value={formData.name}
         onChange={handleChange}
       />
       <input
@@ -53,6 +53,7 @@ const DeliveryRecord = () => {
       />
       <button type="submit">Record Item</button>
     </form>
+    
   );
 };
 
