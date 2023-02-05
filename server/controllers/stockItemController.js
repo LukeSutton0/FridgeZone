@@ -28,11 +28,11 @@ const getStockItem = async(req,res)=>{
 
 //create new stock item
 const createStockItem = async (req,res) =>{
-    const{id,name,expiryDate,supplier}=req.body
+    const{id,name,quantity,expiryDate,supplier}=req.body
 
     //add doc to db
     try{
-        const stockItem = await StockItem.create({name,expiryDate,supplier})
+        const stockItem = await StockItem.create({name,quantity,expiryDate,supplier})
         res.status(200).json(stockItem)
     }
     catch(error){
