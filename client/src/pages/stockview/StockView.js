@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
-import StockDetails from "./StockDetails";
-import classes from './Details.module.css'
+import StockDetails from "./StockViewDetails";
+import classes from './StockView.module.css'
 
 const Details = () => {
   const [stock, setStock] = useState(null);
