@@ -9,8 +9,6 @@ const SignUp = () =>{
         <div className={classes.inputBox}>
           <SignUpForm/>
         </div>
-      
-   
   )
 }
 

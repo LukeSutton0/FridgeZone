@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-
+import { useAuthContext } from "../../hooks/useAuthContext";
 
 const DeliveryRecord = () => {
   const [name, setName] = useState('')
@@ -8,6 +8,8 @@ const DeliveryRecord = () => {
   const [supplier, setSupplier] = useState('')
   const [message, setMessage] = useState('')
   const [error, setError] = useState(null)
+  
+  const {user} = useAuthContext()
 
   const handleSubmit = async (e) => {
     e.preventDefault()
@@ -18,7 +20,8 @@ const DeliveryRecord = () => {
       method: 'POST',
       body: JSON.stringify(stock),
       headers: {
-        'Content-Type': 'application/json'
+        'Content-Type': 'application/json',
+        'Authorisation':`Bearer ${user.token}`
       }
     })
     const json = await response.json()

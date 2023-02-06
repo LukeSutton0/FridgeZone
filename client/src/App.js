@@ -31,19 +31,14 @@ function App() {
             </Route>
             <Route path="/login" element={<Login/>}>
             </Route>
-
             <Route path="/home" element={<Home/>} onEnter={useAuthContext}>
-              <Route path="">
-                <Route path="/home/openDoor" element={<OpenDoor/>} onEnter={requireAuth}>
+                {/* <Route path="/home/openDoor" element={<OpenDoor/>} onEnter={useAuthContext}>
                 </Route>
                 <Route path="/home/stockView" element={<StockView/>}>
-                </Route>
-              </Route>
-
+                </Route> */}
             </Route>
           </Routes>
         </div>
-
         <MainFooter/>
       </div>
     </Router>
