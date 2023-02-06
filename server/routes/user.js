@@ -9,6 +9,6 @@ router.post('/login',loginUser)
 //signup route
 router.post('/signup',signUpUser)
 router.get('/signup', async(req,res)=>{
-    
 })
+
 module.exports = router

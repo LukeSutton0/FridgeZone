@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import classes from './Door.module.css'
-import DoorForm from "./DoorForm";
+import classes from './openDoor.module.css'
+import DoorForm from "./openDoorForm";
 
 const Door = () => {  
   const [isOpen, setIsOpen] = useState(false);

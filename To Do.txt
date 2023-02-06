@@ -19,9 +19,19 @@ Open Door page for drivers, Muhammad
 Tutorial page for navigation applicaiton ?
 
 
-styling of pages
+styling of pages:
+footer needs to not be sticky
+mobile and tablet versioons of every page
 
+
+ACCESS:
+Open door - driver,HeadC
+Admin - HeadC
+Health &S - H&S officer
+add stock - driver,HeadC
+remove stock - HeadC,Chef
+View all stock - Chef,HeadC
+notifications - all
 
 https://www.youtube.com/watch?v=8DploTqLstE&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=2
-
 https://www.youtube.com/watch?v=bx4nk7kBS10&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=8
