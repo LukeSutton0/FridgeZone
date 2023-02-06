@@ -19,8 +19,6 @@ router.get('/',getStockItems)
 // Get 1 stock item
 router.get('/',getStockItem)
 
-
-
 //POST stockItem
 router.post('/',createStockItem)
 

@@ -6,13 +6,12 @@ import MainHeader from './components/header/MainHeader.js'
 import MainFooter from './components/footer/Footer.js'
 import MainScreen from './pages/mainScreen/MainScreen.js'
 import ErrorContent  from './components/error/ErrorContent.js'
-import checkForAuth from './hooks/checkForAuth.js'
+import requireAuth from './hooks/checkForAuth.js'
 
 import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
-
-import Door from './pages/door/Door.js'
+import OpenDoor from './pages/openDoor/openDoor.js'
 
 import Details from './pages/details/Details.js'
 
@@ -24,7 +23,7 @@ function App() {
         <MainHeader/>
         <div className="content">
           <Routes>
-            <Route path="/" element={<MainScreen/>} onEnter={checkForAuth}>
+            <Route path="/" element={<MainScreen/>} onEnter={requireAuth}>
             </Route>
             <Route path="*" element={<ErrorContent/>}>
             </Route>
@@ -32,7 +31,7 @@ function App() {
             </Route>
             <Route path="/login" element={<Login/>}>
             </Route>
-            <Route path="/door" element={<Door/>}>
+            <Route path="/openDoor" element={<OpenDoor/>} onEnter={requireAuth}>
             </Route>
             <Route path="/details" element={<Details/>}>
             </Route>
