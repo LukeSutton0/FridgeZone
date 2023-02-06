@@ -13,7 +13,7 @@ import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
 import OpenDoor from './pages/openDoor/OpenDoor.js'
-import StockView from './pages/stockview/StockView.js'
+import StockView from './pages/stockView/StockView.js'
 
 
 function App() {
@@ -31,13 +31,15 @@ function App() {
             </Route>
             <Route path="/login" element={<Login/>}>
             </Route>
+
             <Route path="/home" element={<Home/>} onEnter={useAuthContext}>
-              <Routes>
-                <Route path="/openDoor" element={<OpenDoor/>} onEnter={requireAuth}>
+              <Route path="">
+                <Route path="/home/openDoor" element={<OpenDoor/>} onEnter={requireAuth}>
                 </Route>
-                <Route path="/stockView" element={<StockView/>}>
+                <Route path="/home/stockView" element={<StockView/>}>
                 </Route>
-              </Routes>
+              </Route>
+
             </Route>
           </Routes>
         </div>
