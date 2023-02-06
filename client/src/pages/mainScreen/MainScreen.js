@@ -6,15 +6,15 @@ import { useNavigate } from "react-router-dom";
 
 //add comments so we know whats going on with your initials
 const SignUp = () =>{
-  let navigate = useNavigate();
+  const navigate = useNavigate();
     return(
         <div className={classes.inputBox}>
           <Button variant="primary" onClick={()=> {
-            navigate("/signUp");
+            navigate('/signUp');
             }}>
             Sign Up</Button>
           <Button variant="primary" onClick={()=> {
-            navigate("/login");
+            navigate('/login');
             }}>
             Login</Button>
         </div>

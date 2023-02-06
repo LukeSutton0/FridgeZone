@@ -1,10 +1,10 @@
 import React from "react";
 
-import logo from "../../Assets/logo2.png";
+import logo from "../../assets/logo.png";
 
 import classes from './MainHeader.module.css'
 const MainHeader = () =>{
-    let companyName = 'FridgeZone';
+    // let companyName = 'FridgeZone';
 
     return(
         <div className={classes.nav}>
