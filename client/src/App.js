@@ -6,13 +6,14 @@ import MainFooter from './components/footer/Footer.js'
 import ErrorContent  from './components/error/ErrorContent.js'
 //Hooks
 import requireAuth from './hooks/checkForAuth.js'
+import { useAuthContext } from './hooks/useAuthContext.js';
 //Pages
 import MainScreen from './pages/mainScreen/MainScreen.js'
 import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
 import OpenDoor from './pages/openDoor/OpenDoor.js'
-import Details from './pages/details/Details.js'
+import StockView from './pages/stockview/StockView.js'
 
 
 function App() {
@@ -30,11 +31,13 @@ function App() {
             </Route>
             <Route path="/login" element={<Login/>}>
             </Route>
-            <Route path="/openDoor" element={<OpenDoor/>} onEnter={requireAuth}>
-            </Route>
-            <Route path="/details" element={<Details/>}>
-            </Route>
-            <Route path="/home" element={<Home/>}>
+            <Route path="/home" element={<Home/>} onEnter={useAuthContext}>
+              <Routes>
+                <Route path="/openDoor" element={<OpenDoor/>} onEnter={requireAuth}>
+                </Route>
+                <Route path="/stockView" element={<StockView/>}>
+                </Route>
+              </Routes>
             </Route>
           </Routes>
         </div>
