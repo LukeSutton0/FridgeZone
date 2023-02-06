@@ -1,4 +1,4 @@
-import classes from './Details.module.css'
+import classes from './StockView.module.css'
 
 const StockDetails = ({stock}) => {
 return (
