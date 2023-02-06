@@ -43,5 +43,33 @@ code {
   border-radius: 50%;
   color: #333;
 }
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+ 
+}
+
+input[type="text"] {
+  padding: 15px;
+  font-size: 16px;
+  width: 50%;
+  margin-right: 10px;
+  margin-bottom: 0px;
+  border: 1px solid gray;
+  border-radius: 5px;
+  
+}
+
+.search-container button {
+  padding: 15px 20px;
+  font-size: 16px;
+  background: #333;
+  color: #fff;
+  border: 0;
+  border-radius: 5px;
+  cursor: pointer;
+  margin-top: 0px;
+}
 
 
