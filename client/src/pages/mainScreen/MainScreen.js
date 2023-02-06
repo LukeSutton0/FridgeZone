@@ -12,7 +12,7 @@ const SignUp = () =>{
           <Button variant="primary" onClick={()=> {
             navigate('/signUp');
             }}>
-            SignUp</Button>
+            Sign Up</Button>
           <Button variant="primary" onClick={()=> {
             navigate('/login');
             }}>

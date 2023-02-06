@@ -1,0 +1,74 @@
+h1 {
+  text-align: center;
+  color: rgb(0, 0, 0);
+  padding-top: 1vh;
+  font-weight: bold;
+  font-size: 5vw;
+  margin-bottom: 6vh;
+}
+.doorContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.door {
+  width: 100px;
+  height: 200px;
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: contain;
+  transition: all 0.5s;
+}
+
+.open {
+  background-image: url('../../Assets/fridge_open.png');
+  width: 200px;
+  height: 200px;
+}
+
+.closed {
+  background-image: url('../../Assets/fridge_closed.png');
+  width: 150px;
+  height: 200px;
+}
+
+input {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+}
+
+button {
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #333;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  font-size: 1.2rem;
+}
+
+form {
+  margin-bottom: 120px; 
+  
+}
+button[type="submit"] {
+  display: block;
+  margin: 0 auto;
+}
+
+
+@media (min-width: 700px) {
+  input {
+    width: 50%;
+    font-size: 1.5rem;
+  }
+  button {
+    width: 20%;
+    font-size: 1.2rem;
+  }
+  
+}

@@ -17,6 +17,7 @@ const MainFooter = () =>{
 
     return(
         <div className={classes.footerContainer}>
+           <Link to="">Home</Link>
             <p>Someone Style This Footer Please</p>
             {user && (
             <div>

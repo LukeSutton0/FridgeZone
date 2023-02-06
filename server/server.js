@@ -21,6 +21,7 @@ app.use('/user',userRoutes)
 
 
 
+
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
     .then(()=>{

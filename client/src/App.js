@@ -12,6 +12,11 @@ import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
 
+import Door from './pages/door/Door.js'
+
+import Details from './pages/details/Details.js'
+
+
 function App() {
   return (
     <Router>
@@ -26,6 +31,10 @@ function App() {
             <Route path="/signup" element={<SignUp/>}>
             </Route>
             <Route path="/login" element={<Login/>}>
+            </Route>
+            <Route path="/door" element={<Door/>}>
+            </Route>
+            <Route path="/details" element={<Details/>}>
             </Route>
             <Route path="/home" element={<Home/>}>
             </Route>
