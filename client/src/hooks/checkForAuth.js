@@ -1,11 +1,11 @@
 import { useLogin } from "./useLogin"
-import { useAuthContext } from "../../hooks/useAuthContext";
+
 
 //fix later
 
 
 
-// function checkAuth(nextState, replace, next) {
+ function checkAuth(nextState, replace, next) {
 
 //   const{login} = useLogin()
 //   const navigate = useNavigate()
@@ -27,4 +27,6 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 //     //   });
 //     // }
 //     // next();
-  //}
+  }
+
+  export default checkAuth
