@@ -5,72 +5,12 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-
 }
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
-.stockhome {
-  margin-bottom: 150px; 
+.content{
+  min-height: 75vh;
 }
-.stock-details {
-  background: #fff;
-  border-radius: 4px;
-  margin: 20px auto;
-  padding: 20px;
-  position: relative;
-  box-shadow: 2px 2px 5px rgba(0,0,0,0.05);
-}
-.stock-details h4 {
-  margin: 0 0 10px 0;
-  font-size: 1.2em;
-  color: var(--primary);
-}
-.stock-details p {
-  margin: 0;
-  font-size: 0.9em;
-  color: #555;
-}
-.stock-details span {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  cursor: pointer;
-  background: #f1f1f1;
-  padding: 6px;
-  border-radius: 50%;
-  color: #333;
-}
-.search-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
- 
-}
-
-input[type="text"] {
-  padding: 15px;
-  font-size: 16px;
-  width: 50%;
-  margin-right: 10px;
-  margin-bottom: 0px;
-  border: 1px solid gray;
-  border-radius: 5px;
-  
-}
-
-.search-container button {
-  padding: 15px 20px;
-  font-size: 16px;
-  background: #333;
-  color: #fff;
-  border: 0;
-  border-radius: 5px;
-  margin-right: 10px;
-  cursor: pointer;
-  margin-top: 0px;
-}
-
-

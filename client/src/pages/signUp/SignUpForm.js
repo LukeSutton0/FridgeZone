@@ -1,6 +1,7 @@
 import React, { Fragment, useState } from "react";
 //import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 import { useSignUp } from "../../hooks/useSignUp";
+import {useNavigate} from 'react-router-dom'
 import classes from './SignUp.module.css'
 
 const SignUpForm = () => {
@@ -10,20 +11,19 @@ const SignUpForm = () => {
     const [jobtitle, setJobTitle] = useState('');
     const [fullname, setFullName] = useState('');
 
+    const navigate = useNavigate()
     const {signup,error,isLoading} = useSignUp()
 
     const handleSubmit = async (e) =>{
         e.preventDefault() //stops page refreshing
         //call hook
         await signup(username,password,jobtitle,fullname)
+        navigate('/home');
     }
-
-
-
-
+    
     return (
         <Fragment>
-            <h1>SIGN UP</h1>
+            <h1 className="SignUp-head">SIGN UP</h1>
             <div className={classes.form}>
                 <form onSubmit={handleSubmit}>
                     <label className={classes.formLabel}>Username</label>

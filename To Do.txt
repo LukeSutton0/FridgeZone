@@ -1,27 +1,48 @@
 To DO:
 
+mobile and tablet versions of EVERY page
+Mobile styling:
+Sign Up
+Login
+Open Door page
 
-Backend Setup for login system:
+All styling:
+Home Page
+Report page for health and safety
+Stock page for chef
+Admin page for headchef
+Tutorial page for navigation applicaiton
+
+
+styling of pages:
+footer needs to not be sticky
+
+
+
+
+
+
+
 https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-1-c405048e3669
 
-Backend Setup for pages:
 
 
 
-Frontend React Pages: --> look at requirements to find whats needed on each page
-Sign Up, Haya
-Login, Haya
-Home Page, Aaron
-Report page for health and safety, Sukhraj
-Stock page for chef, Aaron
-Admin page for headchef, Chris
-Open Door page for drivers, Muhammad
-Tutorial page for navigation applicaiton ?
 
-
-styling of pages
-
+ACCESS:
+Open door - driver,HeadC
+Admin - HeadC
+Health &S - H&S officer
+add stock - driver,HeadC
+remove stock - HeadC,Chef
+View all stock - Chef,HeadC
+notifications - all
 
 https://www.youtube.com/watch?v=8DploTqLstE&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=2
-
 https://www.youtube.com/watch?v=bx4nk7kBS10&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=8
+
+Check logged in
+
+check what type of user
+
+show parts for specific user

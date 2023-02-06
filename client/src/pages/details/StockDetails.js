@@ -1,3 +1,5 @@
+import classes from './Details.module.css'
+
 const StockDetails = ({stock}) => {
 return (
 <div className="stock-details">

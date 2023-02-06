@@ -1,7 +1,6 @@
 import React, { Fragment ,useState} from "react";
 import { useLogin } from "../../hooks/useLogin";
-import { scryRenderedComponentsWithType } from "react-dom/test-utils";
-
+import {useNavigate} from 'react-router-dom'
 import classes from './Login.module.css'
 
 const LoginForm = () => {
@@ -10,10 +9,13 @@ const LoginForm = () => {
     const [password, setPassword] = useState('')
     const {login,error,isLoading} = useLogin()
 
+    const navigate = useNavigate()
+
     const handleSubmit = async (e) =>{
         e.preventDefault() //stops page refreshing
         await login(username,password)
         //error checking client side
+        navigate('/home');
     }
     
     return (
