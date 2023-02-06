@@ -43,7 +43,8 @@ const DeliveryRecord = () => {
   return (
     <form onSubmit={handleSubmit}> 
 
-      <input 
+      <input
+        className="doorInput" 
         type="text"
         placeholder="Item Name"  
         onChange={(e) => setName(e.target.value)} 
@@ -52,6 +53,7 @@ const DeliveryRecord = () => {
 
     
       <input 
+        className="doorInput" 
         type="number" 
         placeholder="Quantity" 
         onChange={(e) => setQuantity(e.target.value)} 
@@ -60,6 +62,7 @@ const DeliveryRecord = () => {
 
    
       <input 
+        className="doorInput" 
         type="date" 
         placeholder="Expiry Date"
         onChange={(e) => setExpirydate(e.target.value)} 
@@ -67,13 +70,14 @@ const DeliveryRecord = () => {
       />
 
       <input 
+        className="doorInput" 
         type="text" 
         placeholder="Supplier"
         onChange={(e) => setSupplier(e.target.value)} 
         value={supplier} 
       />
 
-      <button type="submit">Record Item</button>
+      <button type="submit" className="doorButton">Record Item</button>
       {error && <div className="error">{error}</div>}
       {message && <div className="Stock Added">{message}</div>}
     </form>

@@ -11,6 +11,9 @@ const Home = () => {
         {user && (
         <p>{user.username}</p>
         )}
+        <div className={classes.divTest}>
+            <p>a</p>
+        </div>
         </div>
     )
 }

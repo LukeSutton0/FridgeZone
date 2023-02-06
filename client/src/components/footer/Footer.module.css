@@ -1,8 +1,6 @@
 .footerContainer{
-    border-top: 1px solid #e3e2e2;
+    
     min-height:100px;
-    margin-top: 10px;
-    position: fixed;
     left: 0;
     bottom: 0;
     width: 100%;

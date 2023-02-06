@@ -23,7 +23,7 @@ const SignUpForm = () => {
     
     return (
         <Fragment>
-            <h1>SIGN UP</h1>
+            <h1 className="SignUp-head">SIGN UP</h1>
             <div className={classes.form}>
                 <form onSubmit={handleSubmit}>
                     <label className={classes.formLabel}>Username</label>
