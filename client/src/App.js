@@ -1,18 +1,17 @@
 import React from 'react';
 import { BrowserRouter as Router,Routes,Route, Link } from 'react-router-dom';
 //module components
-//{MainHeader}
 import MainHeader from './components/header/MainHeader.js'
 import MainFooter from './components/footer/Footer.js'
-import MainScreen from './pages/mainScreen/MainScreen.js'
 import ErrorContent  from './components/error/ErrorContent.js'
+//Hooks
 import requireAuth from './hooks/checkForAuth.js'
-
+//Pages
+import MainScreen from './pages/mainScreen/MainScreen.js'
 import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
-import OpenDoor from './pages/openDoor/openDoor.js'
-
+import OpenDoor from './pages/openDoor/OpenDoor.js'
 import Details from './pages/details/Details.js'
 
 

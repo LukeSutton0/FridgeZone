@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import classes from './openDoor.module.css'
-import DoorForm from "./openDoorForm";
+import classes from './OpenDoor.module.css'
+import DoorForm from "./OpenDoorForm";
 
 const Door = () => {  
   const [isOpen, setIsOpen] = useState(false);
@@ -11,7 +11,7 @@ const Door = () => {
 
   return (
     <div className={classes.doorContainer}>
-      <h1>Delivery Door</h1>
+      <h1 className="doorHeader">Delivery Door</h1>
       <button onClick={toggleDoor}>{isOpen ? 'Close' : 'Open'}</button>
       <br />
       <div className={`${classes.door} ${isOpen ? classes.open : classes.closed}`}></div>
