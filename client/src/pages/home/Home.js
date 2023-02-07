@@ -2,8 +2,8 @@ import React from "react";
 import classes from './Home.module.css'
 import { useAuthContext } from "../../hooks/useAuthContext";
 import {Link, useNavigate} from 'react-router-dom'
-import OpenDoor from "../openDoor/OpenDoor"
-import StockView from "../stockView/StockView"
+import OpenDoor from "../openDoor/OpenDoor.js"
+import StockView from "../stockView/StockView.js"
 import Button from 'react-bootstrap/Button';
 
 const Home = () => {  

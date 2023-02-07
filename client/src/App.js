@@ -12,8 +12,7 @@ import MainScreen from './pages/mainScreen/MainScreen.js'
 import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
-import OpenDoor from './pages/openDoor/OpenDoor.js'
-import StockView from './pages/stockView/StockView.js'
+
 
 
 function App() {
@@ -32,10 +31,6 @@ function App() {
             <Route path="/login" element={<Login/>}>
             </Route>
             <Route path="/home" element={<Home/>} onEnter={useAuthContext}>
-                {/* <Route path="/home/openDoor" element={<OpenDoor/>} onEnter={useAuthContext}>
-                </Route>
-                <Route path="/home/stockView" element={<StockView/>}>
-                </Route> */}
             </Route>
           </Routes>
         </div>
