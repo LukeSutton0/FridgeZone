@@ -30,16 +30,14 @@ const StockView = () => {
 
   return (
     <Fragment>
-      <div className="stockhome">
-        <div className="stocks">
-          <h1>Stock Details</h1>
-          <div>
+        <div className={classes.stockDetails}>
+          <h1>Current Stock</h1>
+          <div className={classes.stockViewDiv}>
             {stock && stock.map((stock) => (
               <StockDetails key={stock.id} stock={stock} />
             ))}
           </div>
         </div>
-      </div>
     </Fragment>
   )
 }

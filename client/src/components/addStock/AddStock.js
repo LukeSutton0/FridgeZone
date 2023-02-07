@@ -7,6 +7,7 @@ const addStock = () => {
   return (
     <Fragment>
       <div className={classes.addStockContainer}>
+        <h1>Add Stock</h1>
          <StockForm />
       </div>
     </Fragment>

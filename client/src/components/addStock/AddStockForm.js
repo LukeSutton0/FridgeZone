@@ -6,6 +6,7 @@ const DeliveryRecord = () => {
   const [quantity, setQuantity] = useState('')
   const [expirydate, setExpirydate] = useState('')
   const [supplier, setSupplier] = useState('')
+
   const [message, setMessage] = useState('')
   const [error, setError] = useState(null)
   
@@ -35,9 +36,7 @@ const DeliveryRecord = () => {
       setQuantity('')
       setExpirydate('')
       setSupplier('')
-      console.log('New stock added:', json)
-    }
-    if (response.ok) {
+      //console.log('New stock added:', json)
       setMessage(json.message)
     }
 
@@ -80,7 +79,7 @@ const DeliveryRecord = () => {
         value={supplier} 
       />
 
-      <button type="submit" className="addStockButton">Record Item</button>
+      <button type="submit" className="addStockButton">Add Item</button>
       {error && <div className="error">{error}</div>}
       {message && <div className="Stock Added">{message}</div>}
     </form>

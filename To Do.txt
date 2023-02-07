@@ -4,23 +4,20 @@ To DO:
 Backend Setup for login system:
 https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-1-c405048e3669
 
-Backend Setup for pages:
-
-
 
 Frontend React Pages: --> look at requirements to find whats needed on each page
-Sign Up, Haya
-Login, Haya
-Home Page, Aaron
-Report page for health and safety, Sukhraj
-Stock page for chef, Aaron
-Admin page for headchef, Chris
-Open Door page for drivers, Muhammad
-Tutorial page for navigation applicaiton ?
+Home Page
+Report page for health and safety
+Stock page for chef
+Admin page for headchef
+Open Door
+Tutorial page
 
+Things to do:
+reload stock details on addition
+sort stock by exp date
 
 styling of pages:
-footer needs to not be sticky
 mobile and tablet versioons of every page
 
 

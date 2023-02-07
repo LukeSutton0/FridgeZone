@@ -5,7 +5,7 @@ import {Link, useNavigate} from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
 import OpenDoor from "../../components/openDoor/OpenDoor.js"
-import StockView from "../stockView/StockView.js"
+import StockView from "../../components/stockView/StockView.js"
 import AddStock from "../../components/addStock/AddStock.js"
 
 
