@@ -16,6 +16,8 @@ Tutorial page
 Things to do:
 reload stock details on addition
 sort stock by exp date
+add minimum date to add stock
+set dates to red on view stock if out of date
 
 styling of pages:
 mobile and tablet versioons of every page

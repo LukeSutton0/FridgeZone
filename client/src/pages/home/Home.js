@@ -7,7 +7,8 @@ import Button from 'react-bootstrap/Button';
 import OpenDoor from "../../components/openDoor/OpenDoor.js"
 import StockView from "../../components/stockView/StockView.js"
 import AddStock from "../../components/addStock/AddStock.js"
-
+import RemoveStock from "../../components/removeStock/RemoveStock.js"
+import HealthAndSafety from "../../components/healthSafetyReport/HealthAndSafety";
 
 const Home = () => {  
     const {user} = useAuthContext()
@@ -29,10 +30,10 @@ const Home = () => {
                             <AddStock/>
                         </div>
                         <div className={classes.homeDivBox}>
-                            
+                            <RemoveStock/>
                         </div>
                         <div className={classes.homeDivBox}>
-                            
+                            <HealthAndSafety/>
                         </div>
                         <div className={classes.homeDivBox}>
                             

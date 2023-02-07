@@ -15,7 +15,16 @@
     margin: 0 auto;
   }
   
-  
+  .addStockResult{
+    display:flex;
+    justify-content: center;
+  }
+  .addStockError{
+    color:red;
+  } 
+  .addStockMessage{
+    color:green;
+  }
   @media (min-width: 700px) {
     .addStockInput {
       width: 50%;

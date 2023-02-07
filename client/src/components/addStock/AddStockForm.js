@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
-
+import classes from "./AddStock.module.css"
 const DeliveryRecord = () => {
   const [name, setName] = useState('')
   const [quantity, setQuantity] = useState('')
@@ -28,16 +28,16 @@ const DeliveryRecord = () => {
     const json = await response.json()
 
     if (!response.ok) {
-      setError(json.error)
+      setError("Ensure all fields are filled")
     }
     if (response.ok) {
+      setMessage(` ${name} Added Successfully`)
       setError(null)
       setName('')
       setQuantity('')
       setExpirydate('')
       setSupplier('')
       //console.log('New stock added:', json)
-      setMessage(json.message)
     }
 
   }
@@ -46,7 +46,7 @@ const DeliveryRecord = () => {
     <form onSubmit={handleSubmit}> 
 
       <input
-        className="addStockInput" 
+        className={classes.addStockInput}
         type="text"
         placeholder="Item Name"  
         onChange={(e) => setName(e.target.value)} 
@@ -55,7 +55,7 @@ const DeliveryRecord = () => {
 
     
       <input 
-        className="addStockInput" 
+        className={classes.addStockInput} 
         type="number" 
         placeholder="Quantity" 
         onChange={(e) => setQuantity(e.target.value)} 
@@ -64,7 +64,7 @@ const DeliveryRecord = () => {
 
    
       <input 
-        className="addStockInput" 
+        className={classes.addStockInput}
         type="date" 
         placeholder="Expiry Date"
         onChange={(e) => setExpirydate(e.target.value)} 
@@ -72,16 +72,22 @@ const DeliveryRecord = () => {
       />
 
       <input 
-        className="addStockInput" 
+        className={classes.addStockInput}
         type="text" 
         placeholder="Supplier"
         onChange={(e) => setSupplier(e.target.value)} 
         value={supplier} 
       />
 
-      <button type="submit" className="addStockButton">Add Item</button>
-      {error && <div className="error">{error}</div>}
-      {message && <div className="Stock Added">{message}</div>}
+      <button type="submit" className={classes.addStockButton}>Add Item</button>
+      {error &&(
+        <div className={`${classes.addStockResult} ${classes.addStockError}`}>
+            {error}
+        </div>
+      )}
+      {message && (
+            <div className={`${classes.addStockResult} ${classes.addStockMessage}`}>{message}</div>
+      )}
     </form>
   )
 }
