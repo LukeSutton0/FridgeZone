@@ -2,9 +2,12 @@ import React from "react";
 import classes from './Home.module.css'
 import { useAuthContext } from "../../hooks/useAuthContext";
 import {Link, useNavigate} from 'react-router-dom'
-import OpenDoor from "../openDoor/OpenDoor.js"
-import StockView from "../stockView/StockView.js"
 import Button from 'react-bootstrap/Button';
+
+import OpenDoor from "../../components/openDoor/OpenDoor.js"
+import StockView from "../stockView/StockView.js"
+import AddStock from "../../components/addStock/AddStock.js"
+
 
 const Home = () => {  
     const {user} = useAuthContext()
@@ -21,6 +24,18 @@ const Home = () => {
                         </div>
                         <div className={classes.homeDivBox}>
                             <StockView/>
+                        </div>
+                        <div className={classes.homeDivBox}>
+                            <AddStock/>
+                        </div>
+                        <div className={classes.homeDivBox}>
+                            
+                        </div>
+                        <div className={classes.homeDivBox}>
+                            
+                        </div>
+                        <div className={classes.homeDivBox}>
+                            
                         </div>
                     </div>
                     <div className={classes.homeSideBar}>
