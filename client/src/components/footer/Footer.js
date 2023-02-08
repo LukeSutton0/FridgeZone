@@ -26,8 +26,8 @@ const MainFooter = () =>{
             )}
             {!user && (
                 <div className={classes.footerDivFlex}>
-                    <Link to="/login">Login</Link>
                     <Link to="/signup">Sign Up</Link>
+                    <Link to="/login">Login</Link>
                 </div>
             )}
       </div>

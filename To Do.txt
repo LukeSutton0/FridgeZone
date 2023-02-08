@@ -23,7 +23,7 @@ login/signup page red error
 change fridge to progress bar opening and closing
 
 styling of pages:
-mobile and tablet versioons of every page
+mobile and tablet versions of every page
 
 
 ACCESS: HeadChef for all
