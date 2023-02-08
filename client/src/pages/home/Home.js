@@ -20,27 +20,27 @@ const Home = () => {
               
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <div className={classes.homeDivBox}>
                                 <OpenDoor/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
                                 <div className={classes.homeDivBox}>
                                     <StockView/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <div className={classes.homeDivBox}>
                                     <AddStock/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
                                 <div className={classes.homeDivBox}>
                                     <RemoveStock/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
                                 <div className={classes.homeDivBox}>
                                     <HealthAndSafety/>
                                 </div>

@@ -45,12 +45,10 @@ const SignUpForm = () => {
                     <select
                     value={jobtitle}
                     onChange={(e)=>setJobTitle(e.target.value)}>
-                        <option value="DeliveryDriver">DeliveryDriver</option>
-                        <option value="HeadChef">HeadChef</option>
                         <option value="Chef">Chef</option>
-                        <option value="Admin">Admin</option>
-                        <option value="Supplier">Supplier</option>
+                        <option value="DeliveryDriver">DeliveryDriver</option>
                         <option value="HealthAndSafetyOfficer">Health and Safety Officer</option>
+                        <option value="HeadChef">HeadChef</option>
                     </select>
                     <label className={classes.formLabel}>Full Name</label>
                     <input 
