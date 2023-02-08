@@ -23,6 +23,7 @@ export const useSignUp = () =>{
                 setError(json.error)
             }
             if(response.ok){
+                console.log(json)
                 localStorage.setItem('user',JSON.stringify(json))
                 dispatch({type: 'LOGIN', payload:json})
                 setIsLoading(false)

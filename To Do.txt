@@ -10,6 +10,7 @@ Home Page
 Report page for health and safety
 Stock page for chef
 Admin page for headchef
+
 Open Door
 Tutorial page
 
