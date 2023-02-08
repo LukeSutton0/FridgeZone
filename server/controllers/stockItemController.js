@@ -4,16 +4,21 @@ const mongoose = require('mongoose')
 //get all stock
 
 const getStockItems = async(req,res)=>{
-    const stockItems = await StockItem.find({}).sort({createAt:-1})
+    const stockItems = await StockItem.find({}).sort({expiryDate:-1})
+    res.status(200).json(stockItems)
+}
+
+//Use post with storecode to find items for correct store
+const viewStockItems = async(req,res)=>{  
+    const {storecode} = req.body
+    const storecodeToFind = storecode;
+    const stockItems = await StockItem.find({storecodeToFind}).sort({expiryDate:-1})
     res.status(200).json(stockItems)
 }
 
 //get single stock item
 const getStockItem = async(req,res)=>{
     const {id} = req.params
-
-
-
     if(!mongoose.Types.ObjectId.isValid(id)){
         return res.status(404).json({error:"No such item"})
     }
@@ -28,11 +33,11 @@ const getStockItem = async(req,res)=>{
 
 //create new stock item
 const createStockItem = async (req,res) =>{
-    const{id,name,quantity,expiryDate,supplier}=req.body
+    const{name,quantity,expiryDate,supplier,storecode}=req.body
 
     //add doc to db
     try{
-        const stockItem = await StockItem.create({name,quantity,expiryDate,supplier})
+        const stockItem = await StockItem.create({name,quantity,expiryDate,supplier,storecode})
         res.status(200).json(stockItem)
     }
     catch(error){
@@ -82,6 +87,7 @@ module.exports = {
     getStockItem,
     createStockItem,
     deleteStockItem,
-    updateStockItem
+    updateStockItem,
+    viewStockItems
 
 }

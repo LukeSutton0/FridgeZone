@@ -18,6 +18,10 @@ const stockItemSchema = new Schema({
     supplier:{
         type: String,
         required:true
+    },
+    storecode:{
+        type:String,
+        required:true
     }
 },{timestamps:true})
 

@@ -15,9 +15,7 @@ const Home = () => {
     const navigate = useNavigate()
     return (
         <div className={classes.inputBox}>
-
             {user && (
-              
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (

@@ -6,13 +6,14 @@ import { useAuthContext } from "../../hooks/useAuthContext";
 const StockView = () => {  
   const [stock, setStock] = useState(null)
   const {user} = useAuthContext()
-
+  const storecode = user.storecode
   useEffect(() => {
     const fetchstock = async () => {
-      const response = await fetch('http://localhost:4000/stock',{
-        headers:  {
-          'Authorisation':`Bearer ${user.token}`
-        }
+      //console.log(JSON.stringify({storecode}))
+      const response = await fetch('http://localhost:4000/stock/view',{
+        method: "POST",
+        headers:{'Accept':'application/json','Content-Type': 'application/json','Authorisation':`Bearer ${user.token}`},
+        body: JSON.stringify({storecode})
       })
       const json = await response.json()
       if (response.ok) {
