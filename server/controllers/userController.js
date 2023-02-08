@@ -14,7 +14,8 @@ const loginUser = async(req,res)=>{
         const token = createToken(user._id)
         //find jobtitle from db
         const jobtitle = user.jobtitle
-        res.status(200).json({username,token,jobtitle})
+        const storecode = user.storecode
+        res.status(200).json({username,token,jobtitle,storecode})
     }
     catch(error){
         res.status(400).json({error:error.message})
@@ -24,13 +25,13 @@ const loginUser = async(req,res)=>{
 //signUp
 
 const signUpUser = async(req,res)=>{
-    const{username,password,jobtitle,fullname} = req.body
+    const{username,password,jobtitle,fullname,storecode} = req.body
     try{
-        const user = await User.signUp(username,password,jobtitle,fullname)
+        const user = await User.signUp(username,password,jobtitle,fullname,storecode)
         //create token
         const token = createToken(user._id)
         
-        res.status(200).json({username,token,jobtitle})
+        res.status(200).json({username,token,jobtitle,storecode})
     }
     catch(error){
         res.status(400).json({error:error.message})

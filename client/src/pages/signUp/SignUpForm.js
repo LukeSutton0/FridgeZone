@@ -1,7 +1,6 @@
 import React, { Fragment, useState } from "react";
 //import { scryRenderedComponentsWithType } from "react-dom/test-utils";
 import { useSignUp } from "../../hooks/useSignUp";
-import {useNavigate} from 'react-router-dom'
 import classes from './SignUp.module.css'
 
 const SignUpForm = () => {
@@ -10,14 +9,14 @@ const SignUpForm = () => {
     const [password, setPassword] = useState('');
     const [jobtitle, setJobTitle] = useState('DeliveryDriver');
     const [fullname, setFullName] = useState('');
+    const [storecode, setStoreCode] = useState('');
 
-    const navigate = useNavigate()
     const {signup,error,isLoading} = useSignUp()
 
     const handleSubmit = async (e) =>{
         e.preventDefault() //stops page refreshing
         //call hook
-        await signup(username,password,jobtitle,fullname)
+        await signup(username,password,jobtitle,fullname,storecode)
         //navigate('/home');
         
     }
@@ -48,7 +47,6 @@ const SignUpForm = () => {
                         <option value="Chef">Chef</option>
                         <option value="DeliveryDriver">DeliveryDriver</option>
                         <option value="HealthAndSafetyOfficer">Health and Safety Officer</option>
-                        <option value="HeadChef">HeadChef</option>
                     </select>
                     <label className={classes.formLabel}>Full Name</label>
                     <input 
@@ -57,7 +55,14 @@ const SignUpForm = () => {
                         value={fullname}
                         placeholder = "Full Name"
                         onChange={(e) => setFullName(e.target.value)}/>
-
+                    <label className={classes.formLabel}>Store Code</label>
+                    <input 
+                        type="text"
+                        required
+                        value={storecode}
+                        placeholder = "1234"
+                        onChange={(e) => setStoreCode(e.target.value)}/>
+                    
                     <button className={classes.btn} disabled={isLoading}>Submit</button>
                     {error && <div className="error">{error}</div>}
                 </form>
