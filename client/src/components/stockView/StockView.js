@@ -33,6 +33,23 @@ const StockView = () => {
         <div className={classes.stockDetails}>
           <h1>Current Stock</h1>
           <div className={classes.stockViewDiv}>
+          <div className={classes.stockViewIndividual}>
+            <div>
+                <p>Name:</p>
+            </div>
+            <div>
+            <p>Quantity:</p>
+            </div>
+            <div>
+                <p>Expiry Date:</p>
+            </div>
+            <div>
+                <p>Supplier:</p>
+            </div>
+            <div>
+                <p>ID:</p>
+            </div>
+        </div>
             {stock && stock.map((stock) => (
               <StockDetails key={stock.id} stock={stock} />
             ))}

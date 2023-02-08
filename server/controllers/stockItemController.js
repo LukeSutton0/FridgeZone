@@ -12,7 +12,6 @@ const getStockItems = async(req,res)=>{
 const viewStockItems = async(req,res)=>{  
     const {storecode} = req.body
     const storecodeToFind = storecode;
-    console.log(storecodeToFind)
     const stockItems = await StockItem.find({"storecode":storecodeToFind}).sort({expiryDate:+1})
     res.status(200).json(stockItems)
 }

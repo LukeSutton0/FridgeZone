@@ -10,11 +10,15 @@ const healthReportSchema = new Schema({
         type:String,
         required:true
     },
-    itemsOutOfDate:{
-        type:String,
+    itemsExpired:{
+        type: Object,
         required:true
     },
-    quantityOutOfDate:{
+    quantityExpired:{
+        type: Number,
+        required:true
+    },
+    storecode:{
         type:String,
         required:true
     }

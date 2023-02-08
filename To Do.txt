@@ -14,17 +14,22 @@ Admin page for headchef
 Open Door
 Tutorial page
 
-Things to do:
+
+High Prio:
 reload stock details on addition
-add minimum date to add stock
-set dates to red on view stock if out of date
-change dates to orange if stock going out of date this week
 
-login/signup page red error
-change fridge to progress bar opening and closing
-
+Medium Prio:
 styling of pages:
 mobile and tablet versions of every page
+login/signup page red error
+
+Low Prio:
+add minimum date to add stock?
+set dates to red on view stock if out of date
+change dates to orange if stock going out of date this week
+change fridge to progress bar opening and closing
+
+
 
 
 ACCESS: HeadChef for all
