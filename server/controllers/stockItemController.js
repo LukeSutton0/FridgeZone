@@ -4,7 +4,7 @@ const mongoose = require('mongoose')
 //get all stock
 
 const getStockItems = async(req,res)=>{
-    const stockItems = await StockItem.find({}).sort({expiryDate:-1})
+    const stockItems = await StockItem.find({}).sort({expiryDate:+1})
     res.status(200).json(stockItems)
 }
 
@@ -12,7 +12,7 @@ const getStockItems = async(req,res)=>{
 const viewStockItems = async(req,res)=>{  
     const {storecode} = req.body
     const storecodeToFind = storecode;
-    const stockItems = await StockItem.find({storecodeToFind}).sort({expiryDate:-1})
+    const stockItems = await StockItem.find({storecodeToFind}).sort({expiryDate:+1})
     res.status(200).json(stockItems)
 }
 

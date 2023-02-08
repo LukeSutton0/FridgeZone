@@ -14,8 +14,8 @@ const DeliveryRecord = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-
-    const stock = {name, quantity, expiryDate: expirydate, supplier}
+    const storecode = user.storecode
+    const stock = {name, quantity, expiryDate: expirydate, supplier,storecode}
     
     const response = await fetch('http://localhost:4000/stock', {
       method: 'POST',

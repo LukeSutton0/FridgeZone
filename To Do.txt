@@ -16,9 +16,10 @@ Tutorial page
 
 Things to do:
 reload stock details on addition
-sort stock by exp date
 add minimum date to add stock
 set dates to red on view stock if out of date
+change dates to orange if stock going out of date this week
+
 login/signup page red error
 change fridge to progress bar opening and closing
 
