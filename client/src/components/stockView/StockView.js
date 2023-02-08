@@ -18,7 +18,6 @@ const StockView = () => {
       const json = await response.json()
       if (response.ok) {
         setStock(json)
-
     }
   }
   //if user exists try to fetch stock
