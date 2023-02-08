@@ -1,7 +1,7 @@
 import React from "react";
 import classes from './Home.module.css'
 import { useAuthContext } from "../../hooks/useAuthContext";
-import {Link, useNavigate} from 'react-router-dom'
+import {useNavigate} from 'react-router-dom'
 import Button from 'react-bootstrap/Button';
 
 import OpenDoor from "../../components/openDoor/OpenDoor.js"
@@ -20,27 +20,27 @@ const Home = () => {
               
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <div className={classes.homeDivBox}>
                                 <OpenDoor/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
                                 <div className={classes.homeDivBox}>
                                     <StockView/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <div className={classes.homeDivBox}>
                                     <AddStock/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
                                 <div className={classes.homeDivBox}>
                                     <RemoveStock/>
                                 </div>
                             )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
                                 <div className={classes.homeDivBox}>
                                     <HealthAndSafety/>
                                 </div>
@@ -54,11 +54,27 @@ const Home = () => {
                         <div className={classes.homeSideBar}>
                             <p>User:{user.username}</p>
                             <p>JobTitle:{user.jobtitle}</p>
-                            
+                            <p>StoreCode:{user.storecode}</p>
                             <p>Options Available:</p>
                             <ul>
-                                <li>Option1</li>
-                                <li>Option2</li>
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
+                                <li><a>OpenDoor</a></li>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
+                                <li><a>View Stock</a></li>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
+                               <li><a>Add Stock</a></li>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
+                                <li><a>Remove Stock</a></li>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
+                                <li><a>Health And Safety Report</a></li>
+                            )}
+                             {(user.jobtitle == "" || user.jobtitle == "") && (
+                                <li><a></a></li>
+                            )}
                             </ul>
                                 
                         </div>

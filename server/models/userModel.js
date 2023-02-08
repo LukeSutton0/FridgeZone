@@ -14,20 +14,23 @@ const userSchema = new Schema({
     },
     jobtitle:{
         type:String,
-        require:true
-
+        required:true
     },
     fullname:{
         type:String,
-        require:true
+        required:true
+    },
+    storecode:{
+        type:String,
+        required:true
     }
 })
 
 //static signup method
 
-userSchema.statics.signUp = async function(username,password,jobtitle,fullname) {
+userSchema.statics.signUp = async function(username,password,jobtitle,fullname,storecode) {
     //validation
-    if(!username || !password || !jobtitle || !fullname){
+    if(!username || !password || !jobtitle || !fullname || !storecode){
         throw Error ('All fields must be filled')
     }
     if (!validator.isStrongPassword(password,{minLength:4})){
@@ -44,15 +47,19 @@ userSchema.statics.signUp = async function(username,password,jobtitle,fullname) 
     if (exists){
         throw Error("Username already in use")
     }
+    const storeExists = await this.findOne({storecode})
+    if(!storeExists){
+        throw Error("Store code not found")
+    }
     //password hash
     const salt = await bcrypt.genSalt(10)
     const hash = await bcrypt.hash(password,salt)
-
     const user = await this.create({
         username,
         password:hash,
         jobtitle,
-        fullname
+        fullname,
+        storecode
     })
     return user
 }

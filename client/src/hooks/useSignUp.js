@@ -8,14 +8,14 @@ export const useSignUp = () =>{
     const {dispatch} = useAuthContext()
     const navigate = useNavigate()
 
-    const signup = async(username,password,jobtitle,fullname) => {
+    const signup = async(username,password,jobtitle,fullname,storecode) => {
         setIsLoading(true)
         setError(null)
         try{
             const response = await fetch('http://localhost:4000/user/signup',{
                 method: "POST",
                 headers:{'Accept':'application/json','Content-Type': 'application/json'},
-                body: JSON.stringify({username,password,jobtitle,fullname})
+                body: JSON.stringify({username,password,jobtitle,fullname,storecode})
             })
             const json = await response.json()
     

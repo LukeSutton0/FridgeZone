@@ -20,20 +20,21 @@ sort stock by exp date
 add minimum date to add stock
 set dates to red on view stock if out of date
 login/signup page red error
+change fridge to progress bar opening and closing
 
 styling of pages:
 mobile and tablet versioons of every page
 
 
-ACCESS:
-Open door - driver,HeadC
-add stock - driver,HeadC
-
-Admin - HeadC
+ACCESS: HeadChef for all
+Open door - driver
+View all stock - Chef
+add stock - driver
+remove stock - Chef
 Health &S - H&S officer
-remove stock - HeadC,Chef
+Admin - HeadC
 
-View all stock - Chef,HeadC
+
 
 notifications - all
 
