@@ -1,3 +1,37 @@
-.divTest{
-    height:2000px;
+.homeLoginButton{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+.homeLayoutDiv{
+    display:flex;
+    justify-content: flex-end;
+    width:100%;
+}
+.homeSideBar{
+    width:300px;
+    position: sticky;
+    top:10vh;
+    height:100vh;
+    border-left: 1px solid rgb(214, 214, 214) ;
+    padding:10px
+}
+
+.homeFunctionDivBox{
+    width: 100%;
+}
+
+.homeDivBox{
+    margin:auto;
+    margin-top: 10vh;
+    padding: 16px;
+    box-sizing: border-box;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px #ccc;
+    max-width: 1200px;
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

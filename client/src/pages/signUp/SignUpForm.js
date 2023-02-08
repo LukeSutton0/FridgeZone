@@ -8,7 +8,7 @@ const SignUpForm = () => {
 
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
-    const [jobtitle, setJobTitle] = useState('');
+    const [jobtitle, setJobTitle] = useState('DeliveryDriver');
     const [fullname, setFullName] = useState('');
 
     const navigate = useNavigate()
@@ -18,7 +18,8 @@ const SignUpForm = () => {
         e.preventDefault() //stops page refreshing
         //call hook
         await signup(username,password,jobtitle,fullname)
-        navigate('/home');
+        //navigate('/home');
+        
     }
     
     return (

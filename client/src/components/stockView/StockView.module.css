@@ -1,0 +1,18 @@
+
+.stockDetails {
+
+  border-radius: 4px;
+  margin:5px;
+}
+.stockViewDiv{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: flex-start;
+}
+
+.stockViewIndividual{
+  background: rgb(245, 245, 245);
+  margin:5px;
+  padding:5px;
+}

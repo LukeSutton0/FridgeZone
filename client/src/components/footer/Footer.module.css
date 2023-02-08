@@ -19,3 +19,25 @@
     background: #0a58ca;
     margin: 0 10px;
 }
+
+.logOutButton{
+    text-decoration: none;
+    padding: 10px;
+    border-radius: 5px;
+    color: #ffffff;
+    background: #0a58ca;
+    margin: 0 10px;
+    border:0;
+}   
+.footerDivFlex{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+}
+.footerDivFlex p{
+    margin:0;
+    
+}
+.footerButton:hover{
+    background:#083d8e ;
+}

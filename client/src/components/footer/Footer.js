@@ -17,18 +17,18 @@ const MainFooter = () =>{
 
     return(
         <div className={classes.footerContainer}>
-           <Link to="">Home</Link>
+           <Link to="/home" className={classes.footerButton}>Home</Link>
             {user && (
-            <div>
-                <span>{user.username}</span>
-                <button onClick={handleClick}>Log Out</button>
-            </div>
+                <div className={classes.footerDivFlex}>
+                    <p>User: {user.username}</p>
+                    <button onClick={handleClick} className={`${classes.logOutButton} ${classes.footerButton}`}>Log Out</button>
+                </div>
             )}
             {!user && (
-            <div>
-                <Link to="/login">Login</Link>
-                <Link to="/signup">Sign Up</Link>
-            </div>
+                <div className={classes.footerDivFlex}>
+                    <Link to="/login">Login</Link>
+                    <Link to="/signup">Sign Up</Link>
+                </div>
             )}
       </div>
     )

@@ -1,15 +1,16 @@
 import { useState } from "react";
 import {useAuthContext} from './useAuthContext.js'
+import {useNavigate} from 'react-router-dom'
 
 export const useSignUp = () =>{
     const [error,setError] = useState(null)
     const [isLoading,setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
+    const navigate = useNavigate()
 
     const signup = async(username,password,jobtitle,fullname) => {
         setIsLoading(true)
         setError(null)
-
         try{
             const response = await fetch('http://localhost:4000/user/signup',{
                 method: "POST",
@@ -26,6 +27,7 @@ export const useSignUp = () =>{
                 localStorage.setItem('user',JSON.stringify(json))
                 dispatch({type: 'LOGIN', payload:json})
                 setIsLoading(false)
+                navigate('/home');
             }
         }
         catch(error){
