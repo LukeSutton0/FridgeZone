@@ -46,7 +46,6 @@ const createStockItem = async (req,res) =>{
     }
 }
 
-
 // delete a stock item
 
 const  deleteStockItem  = async(req,res) =>{
@@ -89,6 +88,6 @@ module.exports = {
     createStockItem,
     deleteStockItem,
     updateStockItem,
-    viewStockItems
+    viewStockItems,
 
 }

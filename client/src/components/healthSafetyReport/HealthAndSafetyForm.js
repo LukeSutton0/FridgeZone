@@ -6,6 +6,7 @@ import classes from "./HealthAndSafety.module.css"
 const CreateHealthForm = () => {
   
   const {user} = useAuthContext()
+  const username = user.username
   const storecode = user.storecode
 
   const [message, setMessage] = useState('')
@@ -13,9 +14,9 @@ const CreateHealthForm = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    const response = await fetch('http://localhost:4000/HealthAndSafety', {
+    const response = await fetch('http://localhost:4000/healthandsafety/create', {
       method: 'POST',
-      body: JSON.stringify(storecode),
+      body: JSON.stringify({username,storecode}),
       headers: {
         'Content-Type': 'application/json',
         'Authorisation':`Bearer ${user.token}`
@@ -26,11 +27,11 @@ const CreateHealthForm = () => {
     if (!response.ok) {
         setError("Ensure connection is stable")
       }
-      if (response.ok) {
-        setMessage(` Report Generated Successfully`)
-        setError(null)
-        //console.log('New stock added:', json)
-      }
+    if (response.ok) {
+      setMessage(` Report Generated Successfully`)
+      setError(null)
+      //console.log('New stock added:', json)
+    }
 
   }
 

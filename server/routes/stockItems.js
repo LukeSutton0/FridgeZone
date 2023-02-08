@@ -6,7 +6,7 @@ const {
     createStockItem,
     deleteStockItem,
     updateStockItem,
-    viewStockItems
+    viewStockItems,
 } = require('../controllers/stockItemController.js')
 const requireAuth = require('../middleware/requireAuth.js')
 
@@ -25,6 +25,7 @@ router.post('/',createStockItem)
 
 //POST view stock items from specific store
 router.post('/view',viewStockItems)
+
 
 //DELETE stockItem 
 router.delete('/:id', deleteStockItem)
