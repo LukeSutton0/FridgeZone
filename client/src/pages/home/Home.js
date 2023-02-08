@@ -17,40 +17,54 @@ const Home = () => {
         <div className={classes.inputBox}>
 
             {user && (
-                <>
-                <div className={classes.homeLayoutDiv}>
-                    <div className={classes.homeFunctionDivBox}>
-                        <div className={classes.homeDivBox}>
-                            <OpenDoor/>
+              
+                    <div className={classes.homeLayoutDiv}>
+                        <div className={classes.homeFunctionDivBox}>
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                                <div className={classes.homeDivBox}>
+                                <OpenDoor/>
+                                </div>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                                <div className={classes.homeDivBox}>
+                                    <StockView/>
+                                </div>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                                <div className={classes.homeDivBox}>
+                                    <AddStock/>
+                                </div>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                                <div className={classes.homeDivBox}>
+                                    <RemoveStock/>
+                                </div>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "driver") && (
+                                <div className={classes.homeDivBox}>
+                                    <HealthAndSafety/>
+                                </div>
+                            )}
+                             {(user.jobtitle == "" || user.jobtitle == "") && (
+                                <div className={classes.homeDivBox}>
+                                    
+                                </div>
+                            )}
                         </div>
-                        <div className={classes.homeDivBox}>
-                            <StockView/>
-                        </div>
-                        <div className={classes.homeDivBox}>
-                            <AddStock/>
-                        </div>
-                        <div className={classes.homeDivBox}>
-                            <RemoveStock/>
-                        </div>
-                        <div className={classes.homeDivBox}>
-                            <HealthAndSafety/>
-                        </div>
-                        <div className={classes.homeDivBox}>
+                        <div className={classes.homeSideBar}>
+                            <p>User:{user.username}</p>
+                            <p>JobTitle:{user.jobtitle}</p>
                             
+                            <p>Options Available:</p>
+                            <ul>
+                                <li>Option1</li>
+                                <li>Option2</li>
+                            </ul>
+                                
                         </div>
                     </div>
-                    <div className={classes.homeSideBar}>
-                        <p>User:{user.username}</p>
-                        <p>Options Available:</p>
-                        <ul>
-                            <li>Option1</li>
-                            <li>Option2</li>
-                        </ul>
-                            
-                    </div>
-                </div>
-
-                </>
+                                     
+                
                 
             )}
             {!user &&(

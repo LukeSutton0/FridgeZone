@@ -19,6 +19,7 @@ reload stock details on addition
 sort stock by exp date
 add minimum date to add stock
 set dates to red on view stock if out of date
+login/signup page red error
 
 styling of pages:
 mobile and tablet versioons of every page
