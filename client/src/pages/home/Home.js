@@ -5,11 +5,13 @@ import {useNavigate} from 'react-router-dom'
 import {Link} from 'react-scroll'
 import Button from 'react-bootstrap/Button';
 
+import AddUsers from "../../components/addUsers/AddUsers.js"
 import OpenDoor from "../../components/openDoor/OpenDoor.js"
 import StockView from "../../components/stockView/StockView.js"
 import AddStock from "../../components/addStock/AddStock.js"
 import RemoveStock from "../../components/removeStock/RemoveStock.js"
 import HealthAndSafety from "../../components/healthSafetyReport/HealthAndSafety";
+
 
 const Home = () => {  
     const {user} = useAuthContext()
@@ -19,6 +21,11 @@ const Home = () => {
             {user && (
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
+                            {(user.jobtitle == "HeadChef") && (
+                                <div className={classes.homeDivBox} id="AddUsers">
+                                <AddUsers/>
+                                </div>
+                            )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <div className={classes.homeDivBox} id="OpenDoor">
                                 <OpenDoor/>
