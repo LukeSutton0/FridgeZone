@@ -1,10 +1,10 @@
 To DO:
 
 High Prio:
-view health and safety reports
 admin page
 notifications
 Tutorial page
+accept into database
 
 Medium Prio:
 styling of pages:
@@ -16,6 +16,7 @@ add minimum date to add stock?
 set dates to red on view stock if out of date
 change dates to orange if stock going out of date this week
 door open close database
+driver and health and safety have different main page
 
 ACCESS: HeadChef for all
 Open door - driver

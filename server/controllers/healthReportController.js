@@ -6,16 +6,17 @@ const mongoose = require('mongoose')
 //Use post with storecode to find reports for correct store
 
 const getHealthReports = async(req,res)=>{
-
+    const {storecode} = req.body
+    const storecodeToFind = storecode;
+    try{
+        const reportEntries = await HealthReport.find({"storecode":storecodeToFind}).sort({dateOfReport:+1})
+        console.log(reportEntries)
+        res.status(200).json(reportEntries)
+    }
+    catch(error){
+        res.status(400).json({error:error.message})
+    }
 }
-
-// const viewStockItems = async(req,res)=>{  
-//     const {storecode} = req.body
-//     const storecodeToFind = storecode;
-//     console.log(storecodeToFind)
-//     const stockItems = await StockItem.find({"storecode":storecodeToFind}).sort({expiryDate:+1})
-//     res.status(200).json(stockItems)
-// }
 
 //create report
 const createHealthReport = async(req,res)=>{
