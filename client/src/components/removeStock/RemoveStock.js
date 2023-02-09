@@ -19,7 +19,6 @@ const RemoveStock = () => {
       const json = await response.json()
       if (response.ok) {
         setStock(json)
-        console.log(json)
     }
   }
   //if user exists try to fetch stock

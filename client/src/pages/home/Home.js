@@ -70,7 +70,6 @@ const Home = () => {
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
                                 <li><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
-      
                             )}
                              {(user.jobtitle == "" || user.jobtitle == "") && (
                                 <li><a></a></li>
@@ -78,8 +77,6 @@ const Home = () => {
                             </ul>
                         </div>
                     </div>
-                                     
-                
                 
             )}
             {!user &&(

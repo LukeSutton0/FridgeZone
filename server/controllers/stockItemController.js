@@ -66,19 +66,38 @@ const  deleteStockItem  = async(req,res) =>{
 //update a stock item
 
 const updateStockItem = async(req,res) =>{
-    const {id} = req.params
 
-    if(!mongoose.Types.ObjectId.isValid(id)){
-        return res.status(404).json({error:"No such item"})
-    }
+    const {stock_id,quantityToRemove,storecode} = req.body
+    const _id = stock_id  
+    try{
+        //does item exist
+        const stockItem = await StockItem.findOne({"_id":stock_id})
+        //if quantity is valid (equal or less to current stored)
+        if(stockItem.quantity>= quantityToRemove){
+            try{
+                newQuantity = stockItem.quantity - quantityToRemove        
+                //const _id = stockItem._id.toString()     
+                //const _id = "63e4204df29d529ba820d946"
+                //else set new quantity
+                const stockItem2 = await StockItem.findByIdAndUpdate({_id},{quantity:newQuantity},{new:true})
+                if(stockItem2){
+                    res.status(200).json({stockItem2})
+                }
+            }
 
-    const stockItem = await StockItem.findOneAndUpdate({_id: id},{
-        ...req.body
-    })
-    if(!stockItem){
-        return res.status(404).json({error:`No Item Found by Id ${id}`})
+            catch(error){
+                console.log("Error with finding and  updating db")
+                res.status(406).json({error:error.message})
+            }
+        }
+        else{
+            res.status(403).json({"error":"Quantity exceeds current amount"})
+        }
     }
-    res.status(200).json(stockItem)
+    catch(error){
+        console.log("error with finding in db")
+        res.status(403).json({error:error.message})
+    }
 }
 
 module.exports = {
