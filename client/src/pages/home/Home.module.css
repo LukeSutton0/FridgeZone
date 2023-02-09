@@ -12,7 +12,7 @@
 .homeSideBar{
     width:300px;
     position: sticky;
-    top:10vh;
+    top:1vh;
     height:100vh;
     border-left: 1px solid rgb(214, 214, 214) ;
     padding:10px

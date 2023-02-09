@@ -20,3 +20,12 @@
 .stockViewIndividual div{
   width:20%;
 }
+.stockViewHeaderDiv{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.stockViewHeaderDiv button{
+  margin-bottom: 5vh;
+  margin-left: 2vw;
+}

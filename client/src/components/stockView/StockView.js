@@ -7,6 +7,7 @@ const StockView = () => {
   const [stock, setStock] = useState(null)
   const {user} = useAuthContext()
   const storecode = user.storecode
+
   useEffect(() => {
     const fetchstock = async () => {
       //console.log(JSON.stringify({storecode}))
@@ -27,11 +28,31 @@ const StockView = () => {
 
   }, [user])
   
+  const handleClick = () =>{
+    if (user){
+      const refreshStock = async () => {
+        //console.log(JSON.stringify({storecode}))
+        const response = await fetch('http://localhost:4000/stock/view',{
+          method: "POST",
+          headers:{'Accept':'application/json','Content-Type': 'application/json','Authorisation':`Bearer ${user.token}`},
+          body: JSON.stringify({storecode})
+        })
+        const json = await response.json()
+        if (response.ok) {
+          setStock(json)
+        }
+      }
+      refreshStock();
+    }
+  }
 
   return (
     <Fragment>
         <div className={classes.stockDetails}>
-          <h1>Current Stock</h1>
+          <div className={classes.stockViewHeaderDiv}>
+            <h1>Current Stock</h1>
+            <button onClick={handleClick}>Refresh</button>
+          </div>
           <div className={classes.stockViewDiv}>
           <div className={classes.stockViewIndividual}>
             <div>
@@ -51,7 +72,7 @@ const StockView = () => {
             </div>
         </div>
             {stock && stock.map((stock) => (
-              <StockDetails key={stock.id} stock={stock} />
+              <StockDetails key={stock._id} stock={stock} />
             ))}
           </div>
         </div>

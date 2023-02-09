@@ -2,10 +2,9 @@ To DO:
 
 High Prio:
 Tutorial page
-reload stock details on addition
 remove stock
-admin page
 view health and safety reports
+admin page
 notifications
 
 Medium Prio:
@@ -17,7 +16,7 @@ Low Prio:
 add minimum date to add stock?
 set dates to red on view stock if out of date
 change dates to orange if stock going out of date this week
-
+door open close database
 
 
 
@@ -28,6 +27,16 @@ add stock - driver
 remove stock - Chef
 Health &S - H&S officer
 Admin - HeadC
+
+
+Styling you can do:
+
+Door status
+side bar
+current stock
+add stock
+footer user name?
+
 
 
 https://www.youtube.com/watch?v=8DploTqLstE&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=2

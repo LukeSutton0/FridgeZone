@@ -57,26 +57,25 @@ const Home = () => {
                             <p>Options Available:</p>
                             <ul>
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                                <li><Link to="OpenDoor" spy={true}>OpenDoor</Link></li>
+                                <li><Link to="OpenDoor" spy={true} offset={-300}>OpenDoor</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <li><Link to="StockView" spy={true}>View Stock</Link></li>
+                                <li><Link to="StockView" spy={true} offset={-300}>View Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                               <li><Link to="AddStock" spy={true}>Add Stock</Link></li>
+                               <li><Link to="AddStock" spy={true} offset={-300}>Add Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <li><Link to="RemoveStock" spy={true}>Remove Stock</Link></li>
+                                <li><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
-                                <li><Link to="HealthAndSafety" spy={true}>Health And Safety Report</Link></li>
+                                <li><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
       
                             )}
                              {(user.jobtitle == "" || user.jobtitle == "") && (
                                 <li><a></a></li>
                             )}
                             </ul>
-                                
                         </div>
                     </div>
                                      

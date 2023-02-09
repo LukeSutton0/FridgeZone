@@ -1,0 +1,41 @@
+.stockDetails {
+
+    border-radius: 4px;
+    margin:5px;
+  }
+  .stockRemoveDiv{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+  }
+  
+  .stockRemoveIndividual{
+    width:100%;
+    margin:1px;
+    display:flex;
+  }
+  
+  .stockRemoveIndividual div{
+    width:20%;
+  }
+  .stockIdDiv{
+    width:20%;
+  }
+  .RemoveStockRemoveDiv{
+    display:Flex;
+  }
+  .RemoveStockRemoveDiv input{
+    margin-right: 5px;
+    width:50px;
+  }
+
+  .stockRemoveHeaderDiv{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .stockRemoveHeaderDiv button{
+    margin-bottom: 5vh;
+    margin-left: 2vw;
+  }

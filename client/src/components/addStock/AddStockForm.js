@@ -38,6 +38,7 @@ const DeliveryRecord = () => {
       setExpirydate('')
       setSupplier('')
       //console.log('New stock added:', json)
+      
     }
 
   }
