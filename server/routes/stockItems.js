@@ -28,9 +28,9 @@ router.post('/view',viewStockItems)
 
 
 //DELETE stockItem 
-router.delete('/:id', deleteStockItem)
+router.delete('/delete', deleteStockItem)
 
 //UPDATE stockItem
-router.patch('/:id',updateStockItem)
+router.patch('/removequantity',updateStockItem)
 
 module.exports = router
