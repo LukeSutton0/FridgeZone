@@ -27,7 +27,7 @@ export const useSignUp = () =>{
                 localStorage.setItem('user',JSON.stringify(json))
                 dispatch({type: 'LOGIN', payload:json})
                 setIsLoading(false)
-                navigate('/home');
+                navigate('/Confirmation');
             }
         }
         catch(error){
