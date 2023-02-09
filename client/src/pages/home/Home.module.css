@@ -12,7 +12,7 @@
 .homeSideBar{
     width:300px;
     position: sticky;
-    top:10vh;
+    top:1vh;
     height:100vh;
     border-left: 1px solid rgb(214, 214, 214) ;
     padding:10px
@@ -24,7 +24,7 @@
 
 .homeDivBox{
     margin:auto;
-    margin-top: 10vh;
+    margin-top: 8vh;
     padding: 16px;
     box-sizing: border-box;
     border-radius: 5px;

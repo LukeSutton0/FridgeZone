@@ -2,6 +2,7 @@ import React from "react";
 import classes from './Home.module.css'
 import { useAuthContext } from "../../hooks/useAuthContext";
 import {useNavigate} from 'react-router-dom'
+import {Link} from 'react-scroll'
 import Button from 'react-bootstrap/Button';
 
 import OpenDoor from "../../components/openDoor/OpenDoor.js"
@@ -15,33 +16,31 @@ const Home = () => {
     const navigate = useNavigate()
     return (
         <div className={classes.inputBox}>
-
             {user && (
-              
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                                <div className={classes.homeDivBox}>
+                                <div className={classes.homeDivBox} id="OpenDoor">
                                 <OpenDoor/>
                                 </div>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <div className={classes.homeDivBox}>
+                                <div className={classes.homeDivBox} id="StockView">
                                     <StockView/>
                                 </div>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                                <div className={classes.homeDivBox}>
+                                <div className={classes.homeDivBox} id="AddStock">
                                     <AddStock/>
                                 </div>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <div className={classes.homeDivBox}>
+                                <div className={classes.homeDivBox} id="RemoveStock">
                                     <RemoveStock/>
                                 </div>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
-                                <div className={classes.homeDivBox}>
+                                <div className={classes.homeDivBox} id="HealthAndSafety">
                                     <HealthAndSafety/>
                                 </div>
                             )}
@@ -58,25 +57,25 @@ const Home = () => {
                             <p>Options Available:</p>
                             <ul>
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                                <li><a>OpenDoor</a></li>
+                                <li><Link to="OpenDoor" spy={true} offset={-300}>OpenDoor</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <li><a>View Stock</a></li>
+                                <li><Link to="StockView" spy={true} offset={-300}>View Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                               <li><a>Add Stock</a></li>
+                               <li><Link to="AddStock" spy={true} offset={-300}>Add Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <li><a>Remove Stock</a></li>
+                                <li><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
-                                <li><a>Health And Safety Report</a></li>
+                                <li><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
+      
                             )}
                              {(user.jobtitle == "" || user.jobtitle == "") && (
                                 <li><a></a></li>
                             )}
                             </ul>
-                                
                         </div>
                     </div>
                                      

@@ -1,29 +1,23 @@
 To DO:
 
-
-Backend Setup for login system:
-https://blog.bitsrc.io/build-a-login-auth-app-with-mern-stack-part-1-c405048e3669
-
-
-Frontend React Pages: --> look at requirements to find whats needed on each page
-Home Page
-Report page for health and safety
-Stock page for chef
-Admin page for headchef
-
-Open Door
+High Prio:
 Tutorial page
+remove stock
+view health and safety reports
+admin page
+notifications
 
-Things to do:
-reload stock details on addition
-sort stock by exp date
-add minimum date to add stock
-set dates to red on view stock if out of date
-login/signup page red error
-change fridge to progress bar opening and closing
-
+Medium Prio:
 styling of pages:
-mobile and tablet versioons of every page
+mobile and tablet versions of every page
+login/signup page red error
+
+Low Prio:
+add minimum date to add stock?
+set dates to red on view stock if out of date
+change dates to orange if stock going out of date this week
+door open close database
+
 
 
 ACCESS: HeadChef for all
@@ -35,8 +29,15 @@ Health &S - H&S officer
 Admin - HeadC
 
 
+Styling you can do:
 
-notifications - all
+Door status
+side bar
+current stock
+add stock
+footer user name?
+
+
 
 https://www.youtube.com/watch?v=8DploTqLstE&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=2
 https://www.youtube.com/watch?v=bx4nk7kBS10&list=PL4cUxeGkcC9iJ_KkrkBZWZRHVwnzLIoUE&index=8

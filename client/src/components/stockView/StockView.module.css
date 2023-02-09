@@ -12,7 +12,20 @@
 }
 
 .stockViewIndividual{
-  background: rgb(245, 245, 245);
-  margin:5px;
-  padding:5px;
+  width:100%;
+  margin:1px;
+  display:flex;
+}
+
+.stockViewIndividual div{
+  width:20%;
+}
+.stockViewHeaderDiv{
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}
+.stockViewHeaderDiv button{
+  margin-bottom: 5vh;
+  margin-left: 2vw;
 }
