@@ -25,7 +25,6 @@ const createHealthReport = async(req,res)=>{
     const reporter = username
     let quantityExpired = 0;
     const itemsExpired = [];
-    console.log(storecode)
     try{
         const stockItems = await StockItem.find({"storecode":storecode}).sort({expiryDate:+1})
         for(let i=0; i<stockItems.length;i++){
@@ -35,7 +34,7 @@ const createHealthReport = async(req,res)=>{
                 itemsExpired.push({name:stockItems[i].name , quantity:stockItems[i].quantity})
             }
         }
-        console.log({reporter,dateOfReport,itemsExpired,quantityExpired,storecode})
+        //console.log({reporter,dateOfReport,itemsExpired,quantityExpired,storecode})
         const healthReport = await HealthReport.create({reporter,dateOfReport,itemsExpired,quantityExpired,storecode})
         res.status(200).json(healthReport)
     }

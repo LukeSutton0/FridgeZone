@@ -5,7 +5,7 @@ const AddUsers = () => {
 
     return (
         <Fragment>
-            <p>a</p>
+            <p>Add Users</p>
         </Fragment>
   )
 }
