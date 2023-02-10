@@ -20,12 +20,13 @@ button, input[type="button"], input[type="submit"] {
   border-radius: 12px;
   transition-duration: 0.4s;
   cursor: pointer;
-  background-color: #3c39e9; 
+  background-color: #0d6efd; 
+  color: white;
 
 
 } 
 
 button:hover { 
-  background-color: #5d7bdd; 
+  background-color: #083d8e; 
 
 } 
