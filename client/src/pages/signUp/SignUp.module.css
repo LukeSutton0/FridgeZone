@@ -7,7 +7,7 @@
     border-radius: 5px;
     box-shadow: 0 2px 5px #ccc;
     max-width: 800px;
-    height:350px;
+    height:500px;
   }
   
 .SignUp-head {
@@ -36,7 +36,7 @@
   .btn {
     margin-left: 25vw;
     border: none;
-    background-color: #333;
+    /* background-color: #333; */
     color: #fff;
     padding: 10px 25px;
     text-align: center;
