@@ -22,6 +22,7 @@ button, input[type="button"], input[type="submit"] {
   cursor: pointer;
   background-color: #0d6efd; 
   color: white;
+  border: none;
 
 
 } 
