@@ -26,7 +26,7 @@ flex-direction: row;
 flex-wrap: wrap;
 justify-content: flex-start;
 text-overflow: ellipsis;
-    
+width:100%;
 }
 
 .resultArrayIndividual{
@@ -38,7 +38,7 @@ text-overflow: ellipsis;
 }
 
 .resultArrayIndividual div{
-width:20%;
+width:80%;
 text-overflow: ellipsis;
 overflow: auto;
   

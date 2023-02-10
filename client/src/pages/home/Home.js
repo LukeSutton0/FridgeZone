@@ -11,7 +11,7 @@ import StockView from "../../components/stockView/StockView.js"
 import AddStock from "../../components/addStock/AddStock.js"
 import RemoveStock from "../../components/removeStock/RemoveStock.js"
 import HealthAndSafety from "../../components/healthSafetyReport/HealthAndSafety";
-
+import AdminDashboard from "../../components/adminDash/AdminDash.js"
 
 const Home = () => {  
     const {user} = useAuthContext()
@@ -77,6 +77,11 @@ const Home = () => {
                                     <HealthAndSafety/>
                                 </div>
                             )}
+                            {(user.jobtitle == "HeadChef") && (
+                                <div className={classes.homeDivBox} id="AdminDash">
+                                    <AdminDashboard/>
+                                </div>
+                            )}
                              {(user.jobtitle == "" || user.jobtitle == "") && (
                                 <div className={classes.homeDivBox}>
                                     
@@ -91,20 +96,26 @@ const Home = () => {
                             <p>{date}</p>
                             <p>Options Available:</p>
                             <ul>
+                            {(user.jobtitle == "HeadChef") && (
+                                <li><Link to="AddUsers" spy={true} offset={-200}>AddUsers</Link></li>
+                            )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                                <li><Link to="OpenDoor" spy={true} offset={-300}>OpenDoor</Link></li>
+                                <li><Link to="OpenDoor" spy={true} offset={-200}>OpenDoor</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <li><Link to="StockView" spy={true} offset={-300}>View Stock</Link></li>
+                                <li><Link to="StockView" spy={true} offset={-200}>View Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                               <li><Link to="AddStock" spy={true} offset={-300}>Add Stock</Link></li>
+                               <li><Link to="AddStock" spy={true} offset={-200}>Add Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
                                 <li><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
                                 <li><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
+                            )}
+                            {(user.jobtitle == "HeadChef") && (
+                                <li><Link to="AdminDash" spy={true} offset={-200}>AdminDash</Link></li>
                             )}
                              {(user.jobtitle == "" || user.jobtitle == "") && (
                                 <li><a></a></li>
