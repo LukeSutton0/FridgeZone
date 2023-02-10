@@ -11,6 +11,53 @@ const AddUserDetails = ({resultArray}) => {
     const [message, setMessage] = useState('')
     const [error, setError] = useState(null)
 
+    const addUserDb = () =>{
+        const sendAddReq = async() => {
+            const _id = resultArray._id
+            try{
+                //http://localhost:4000/user/signup
+                const response = await fetch('http://localhost:4000/tempuser/add',{
+                    method: "POST",
+                    headers:{'Accept':'application/json','Content-Type': 'application/json','Authorisation':`Bearer ${user.token}`},
+                    body: JSON.stringify({"_id":_id})
+                })
+                const json = await response.json()
+                if (response.ok) {
+                    
+                  }
+            }
+            catch(error){
+                console.log({error})
+            }
+        }
+        if (user){
+            sendAddReq();
+          }
+    }
+
+    const denyUserDb = () =>{
+        const sendDenyReq = async() => {
+            const _id = resultArray._id
+            try{
+                //http://localhost:4000/user/signup
+                const response = await fetch('http://localhost:4000/tempuser/delete',{
+                    method: "POST",
+                    headers:{'Accept':'application/json','Content-Type': 'application/json','Authorisation':`Bearer ${user.token}`},
+                    body: JSON.stringify({"_id":_id})
+                })
+                const json = await response.json()
+                if (response.ok) {
+                    
+                  }
+            }
+            catch(error){
+                console.log({error})
+            }
+        }
+        if (user){
+            sendDenyReq();
+          }
+    }
 
     return (
         <div className={classes.resultArrayIndividual}>
@@ -24,11 +71,11 @@ const AddUserDetails = ({resultArray}) => {
                 <p>{resultArray.fullname}</p>
             </div>
             <div>
-                <p>{resultArray.id}</p>
+                <p>{resultArray._id}</p>
             </div>
             <div className={classes.resultArrayButtonDiv}>
-                    <button>Add</button>
-                    <button>Remove</button>
+                    <button onClick={addUserDb}>Accept</button>
+                    <button onClick={denyUserDb}>Decline</button>
                 </div>
         </div>
     )

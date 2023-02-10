@@ -30,12 +30,9 @@ Admin - HeadC
 
 
 Styling you can do:
-
-Door status
 side bar
-current stock
-add stock
-footer user name?
+stock - view add remove
+footer user name
 
 
 download from github
