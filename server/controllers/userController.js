@@ -31,7 +31,7 @@ const viewUsers = async(req,res)=>{
     const{storecode} = req.body
     //console.log(storecode)
     try{
-        const users = await User.find({"storecode":storecode})
+        const users = await User.find({"storecode":storecode,"jobtitle":{$ne:"HeadChef"}}).sort({username:+1})
         res.status(200).json(users)
     }
     catch(error){
@@ -76,10 +76,37 @@ const signUpUser = async(req,res)=>{
     }
 }
 
+const deleteUser = async(req,res)=>{
+    const{storecode,_id} = req.body
+    try{
+        const userRemoved = await User.deleteOne({"storecode":storecode,"_id":_id},{new:true})
+        res.status(200).json(userRemoved)
+    }
+    catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
+
+const changeRole = async(req,res)=>{
+    const{storecode,newRole,_id} = req.body
+
+    try{
+        const newRoleUser = await User.findOneAndUpdate({"storecode":storecode,"_id":_id},{"jobtitle":newRole},{new:true})
+        res.status(200).json(newRoleUser)
+    }
+    catch(error){
+        res.status(400).json({error:error.message})
+    }
+    
+}
+
+
 module.exports = {
     loginUser,
     signUpUser,
     viewUsers,
-    changePass
+    changePass,
+    deleteUser,
+    changeRole
 }
 

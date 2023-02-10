@@ -2,36 +2,36 @@ import classes from './AdminDash.module.css'
 import React, { Fragment, useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
-const ChangeUserPass = ({userPassChange}) => {
+const ChangeUserRole = ({userRoleChange}) => {
     const {user} = useAuthContext()
     const storecode = user.storecode
-    const _id = userPassChange._id
-    const [newPass,setNewPass] = useState('')
+    const _id = userRoleChange._id
+    const [newRole,setNewRole]= useState('Chef')
     const [message, setMessage] = useState('')
     const [error, setError] = useState(null)
 
     const handleSubmit = async (e) =>{
         e.preventDefault()
         try{
-            const response = await fetch('http://localhost:4000/user/changepassword', {
+            const response = await fetch('http://localhost:4000/user/changerole', {
                 method: 'PATCH',
                 headers: {
                     'Accept':'application/json',
                     'Content-Type': 'application/json',
                     'Authorisation':`Bearer ${user.token}`
                 },
-                body: JSON.stringify({storecode,newPass,_id})
+                body: JSON.stringify({storecode,newRole,_id})
             })
             const json = await response.json()
             if (!response.ok) {
                 setMessage('')
                 console.log(json)
-                setError('Password requires minimum 4 characters: 1 lowercase, 1 uppercase 1 symbol, 1 number')
+                setError('User not found')
             }
             if (response.ok) {
-                setMessage(`Changed Successfully`)
+                setMessage(`Role Changed Successfully`)
                 setError(null)
-                //console.log('New stock added:', json)
+                userRoleChange.jobtitle= newRole
             }
         }
         catch(error){
@@ -42,18 +42,22 @@ const ChangeUserPass = ({userPassChange}) => {
         <Fragment>
             <form onSubmit={handleSubmit} className={classes.adminDashIndividual}>
                 <div>
-                    <p>{userPassChange.username}</p>
+                    <p>{userRoleChange.username}</p>
                 </div>
                 <div>
-                    <p>{userPassChange._id}</p>
+                    <p>{userRoleChange._id}</p>
+                </div>
+                <div>
+                    <p>{userRoleChange.jobtitle}</p>
                 </div>
                 <div className={classes.userPassChangeDiv}>
-                    <input 
-                        type="text"
-                        required
-                        value={newPass}
-                        placeholder = "NewPass1#"
-                        onChange={(e) => setNewPass(e.target.value)}/>
+                <select
+                    value={newRole}
+                    onChange={(e)=>setNewRole(e.target.value)}>
+                        <option value="Chef">Chef</option>
+                        <option value="DeliveryDriver">DeliveryDriver</option>
+                        <option value="HealthAndSafetyOfficer">Health and Safety Officer</option>
+                    </select>
                     <button>Submit</button>
                     {error &&(
                         <div>{error}</div>
@@ -69,4 +73,4 @@ const ChangeUserPass = ({userPassChange}) => {
 }
 
 
-export default ChangeUserPass;
+export default ChangeUserRole;
