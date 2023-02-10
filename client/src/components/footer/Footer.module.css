@@ -41,3 +41,7 @@
 .footerButton:hover{
     background:#083d8e ;
 }
+
+p{
+    font-weight: bolder;
+}

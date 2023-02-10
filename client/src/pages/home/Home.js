@@ -97,28 +97,46 @@ const Home = () => {
                             <p>Options Available:</p>
                             <ul>
                             {(user.jobtitle == "HeadChef") && (
+<<<<<<< Updated upstream
                                 <li><Link to="AddUsers" spy={true} offset={-200}>AddUsers</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <li><Link to="OpenDoor" spy={true} offset={-200}>OpenDoor</Link></li>
-                            )}
-                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <li><Link to="StockView" spy={true} offset={-200}>View Stock</Link></li>
+=======
+                                <li className={classes.link}><Link to="AddUsers" spy={true} offset={-200}>Add Users</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
-                               <li><Link to="AddStock" spy={true} offset={-200}>Add Stock</Link></li>
+                                <li className={classes.link}><Link to="OpenDoor" spy={true} offset={-200}>Open Door</Link></li>
+>>>>>>> Stashed changes
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
-                                <li><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
+                                <li className={classes.link}><Link to="StockView" spy={true} offset={-200}>View Stock</Link></li>
                             )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
+                               <li className={classes.link}><Link to="AddStock" spy={true} offset={-200}>Add Stock</Link></li>
+                            )}
+                            {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
+                                <li className={classes.link}><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
+                            )}
+
+
+
+
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
+<<<<<<< Updated upstream
                                 <li><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef") && (
                                 <li><Link to="AdminDash" spy={true} offset={-200}>AdminDash</Link></li>
+=======
+                                <li className={`${classes.link} ${classes.linkHealth}`}><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
+                            )}
+                            {(user.jobtitle == "HeadChef") && (
+                                <li className={classes.link}><Link to="AdminDash" spy={true} offset={-200}>Admin Dash</Link></li>
+>>>>>>> Stashed changes
                             )}
                              {(user.jobtitle == "" || user.jobtitle == "") && (
-                                <li><a></a></li>
+                                <li className={classes.link}><a></a></li>
                             )}
                             </ul>
                         </div>
