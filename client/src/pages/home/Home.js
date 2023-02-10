@@ -98,7 +98,6 @@ const Home = () => {
                             <ul>
                             {(user.jobtitle == "HeadChef") && (
                                 <li className={classes.link}><Link to="AddUsers" spy={true} offset={-200}>Add Users</Link></li>
-                                <li className="link"><Link to="AddUsers" spy={true} offset={-200}>AddUsers</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <li className={classes.link}><Link to="OpenDoor" spy={true} offset={-200}>Open Door</Link></li>
