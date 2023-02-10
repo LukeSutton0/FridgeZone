@@ -11,7 +11,6 @@ const HealthAndSafety = () => {
 
   useEffect(() => {
     const fetchreports = async () => {
-      //console.log(JSON.stringify({storecode}))
       const response = await fetch('http://localhost:4000/healthandsafety/get',{
         method: "POST",
         headers:{'Accept':'application/json','Content-Type': 'application/json','Authorisation':`Bearer ${user.token}`},

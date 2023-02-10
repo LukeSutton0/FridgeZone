@@ -1,6 +1,7 @@
 const StockItem = require('../models/stockItemModel.js')
 const mongoose = require('mongoose')
-
+const cron = require("cron");
+const Notification = require('../models/notificationModel.js')
 //get all stock
 
 const getStockItems = async(req,res)=>{
@@ -100,6 +101,47 @@ const updateStockItem = async(req,res) =>{
     }
 }
 
+const checkStockExpired = async () => {
+    console.log("running cron")
+    // check if stock out of date at midnight
+    //store 1 for now
+    const storecode = "1"
+    let dateObj = new Date();
+    let month = dateObj.getUTCMonth() + 1; //months from 1-12
+    let day = dateObj.getUTCDate();
+    let year = dateObj.getUTCFullYear();
+    const expDate = year + "-0" + month + "-" + day;
+    const stockExpired = await StockItem.find({"storecode":storecode,"expiryDate":{$lt:expDate}});
+
+    
+    // try{
+    //     for(let i = 0 ; i<stockExpired.length; i++){
+    //         //const{title,description,storecode} = req.body
+    //         let title = "3 Days To Expire"
+    //         let description = "Item Expired: " + stockExpired[i].name
+    //         let storecode = stockExpired[i].storecode
+    //         console.log(title,description,storecode)
+    //         const insertedNotifications = await Notification.create({title,description,storecode})
+            
+    //     }
+    // }
+    // catch(error){
+    //     console.log(error)
+    // }
+    
+    //
+
+  };
+  
+
+const midnightCheckStock = new cron.CronJob("5 * * * * *", checkStockExpired);
+midnightCheckStock.start();
+
+ 
+
+
+
+
 module.exports = {
     getStockItems,
     getStockItem,
@@ -107,5 +149,5 @@ module.exports = {
     deleteStockItem,
     updateStockItem,
     viewStockItems,
-
+    checkStockExpired
 }

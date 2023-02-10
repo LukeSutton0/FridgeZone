@@ -12,7 +12,7 @@ import AddStock from "../../components/addStock/AddStock.js"
 import RemoveStock from "../../components/removeStock/RemoveStock.js"
 import HealthAndSafety from "../../components/healthSafetyReport/HealthAndSafety";
 import AdminDashboard from "../../components/adminDash/AdminDash.js"
-
+import Notifications from "../../components/notifications/Notifications.js"
 const Home = () => {  
     const {user} = useAuthContext()
     const navigate = useNavigate()
@@ -22,7 +22,8 @@ const Home = () => {
       const intervalId = setInterval(() => {
         setTime(new Date().toLocaleTimeString());
       }, 1000);
-  
+    
+    
       return () => {
         clearInterval(intervalId);
       };
@@ -47,6 +48,11 @@ const Home = () => {
             {user && (
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
+                            {(user.jobtitle == "HeadChef") && (
+                                    <div className={classes.homeDivBox} id="AddUsers">
+                                        <Notifications/>
+                                    </div>
+                            )}
                             {(user.jobtitle == "HeadChef") && (
                                 <div className={classes.homeDivBox} id="AddUsers">
                                     <AddUsers/>
@@ -96,6 +102,9 @@ const Home = () => {
                             <p>{date}</p>
                             <p>Options Available:</p>
                             <ul>
+                            {(user.jobtitle == "HeadChef") && (
+                                <li className={classes.link}><Link to="Notifications" spy={true} offset={-200}>Notifications</Link></li>
+                            )}
                             {(user.jobtitle == "HeadChef") && (
                                 <li className={classes.link}><Link to="AddUsers" spy={true} offset={-200}>Add Users</Link></li>
                             )}

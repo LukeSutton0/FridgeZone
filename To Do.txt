@@ -1,27 +1,29 @@
 To DO:
 
 High Prio:
-admin page
 notifications
-Tutorial page
+create order
 
 Medium Prio:
-styling of pages:
 mobile and tablet versions of every page
 login/signup page red error
+make navbar text smaller
+set dates to red on view stock if out of date
+change dates to orange if stock going out in next 3 days
+driver and health and safety have different main page
 
 Low Prio:
 add minimum date to add stock?
-set dates to red on view stock if out of date
-change dates to orange if stock going out of date this week
 door open close database
-driver and health and safety have different main page
 capitalise stock items on entry
 updates items after time
 home back to top
 convert all usernames to lowercase
 
+
+
 ACCESS: HeadChef for all
+Notifications- headchef (low stock)
 Open door - driver
 View all stock - Chef
 add stock - driver
@@ -37,15 +39,14 @@ footer user name
 
 
 USE CASES NOT DONE:
-2 -  1/2
+
 3
-7
 10
-11
-12
-13
-14
-15
+
+
+
+
+
 
 
 

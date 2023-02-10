@@ -1,0 +1,71 @@
+.notificationDetails {
+    border-radius: 4px;
+    margin:5px;
+    text-overflow: ellipsis;  /* text over flow to prevent words overflowing*/
+    overflow: auto;
+    width:100%;
+    
+  }
+  .notificationRefresh{
+    height:30px;
+  }
+  .notificationDetails div{
+    display:flex;
+    justify-content: center;
+    margin-bottom:0;
+  }
+  .notificationDiv{
+    display:flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    
+  }
+  .notificationContainer{
+    width:100%;
+    overflow:hidden;
+  }
+  
+  .notificationIndividual{
+    width:100%;
+    margin:1px;
+    display:flex;
+    text-overflow: ellipsis;
+    overflow: auto;
+  }
+  
+  .notificationIndividual div{
+    width:30%;
+    text-overflow: ellipsis;
+    overflow: auto;
+  }
+  .notificationDiv{
+    width:100%;
+    text-overflow: ellipsis;
+    overflow: auto;
+    margin-top: 30px;
+  }
+  .notificationDiv{
+    display:Flex;
+    
+  }
+  .notificationDiv input{
+    margin-right: 5px;
+    width:100px;
+    /* background-color: #333; */
+    color: #fff;
+    
+    text-overflow: ellipsis;
+    overflow: auto;
+  }
+
+  .notificationHeaderDiv{
+    display:flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .notificationHead{
+    margin-bottom: 0;
+    padding-bottom: 10px;
+    padding-right:20px;
+  }

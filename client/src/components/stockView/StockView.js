@@ -59,7 +59,7 @@ const StockView = () => {
                 <p>Name:</p>
             </div>
             <div>
-            <p>Quantity:</p>
+              <p>Quantity:</p>
             </div>
             <div>
                 <p>Expiry Date:</p>

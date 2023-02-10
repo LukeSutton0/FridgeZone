@@ -7,9 +7,10 @@ const stockItemRoutes = require("./routes/stockItems.js")
 const userRoutes = require("./routes/user.js")
 const healthReportRoutes = require("./routes/healthReports.js")
 const tempUserRoutes = require("./routes/tempUser.js")
-
+const notificationRoutes = require("./routes/notifications.js")
 const app = express(); //starts app
 const cors = require("cors");
+
 
 
 //middleware
@@ -21,7 +22,7 @@ app.use('/stock', stockItemRoutes);
 app.use('/user',userRoutes);
 app.use('/tempuser',tempUserRoutes);
 app.use('/healthandsafety',healthReportRoutes);
-
+app.use('/notifications',notificationRoutes)
 
 //connect to db
 mongoose.connect(process.env.MONGO_URI)
@@ -34,4 +35,3 @@ mongoose.connect(process.env.MONGO_URI)
         console.log(error)
     })
 
-    
