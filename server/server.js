@@ -18,9 +18,9 @@ app.use(cors());
 
 //routes
 app.use('/stock', stockItemRoutes);
-app.use('/user',userRoutes)
-app.use('/tempuser',tempUserRoutes)
-app.use('/healthandsafety',healthReportRoutes)
+app.use('/user',userRoutes);
+app.use('/tempuser',tempUserRoutes);
+app.use('/healthandsafety',healthReportRoutes);
 
 
 //connect to db

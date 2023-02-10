@@ -22,7 +22,7 @@ const AddUsers = () => {
                 const json = await response.json()
                 if (response.ok) {
                     setResultArray(json)
-                    console.log(resultArray)
+            
                   }
             }
             catch(error){
@@ -68,8 +68,6 @@ const AddUsers = () => {
                 </div>
             </div>
             { resultArray && resultArray.map((resultArray) => (
-                console.log(resultArray),
-            //   <StockDetails key={stock._id} stock={stock} />
                 <AddUserDetails key={resultArray._id} resultArray={resultArray}/>
             ))}
             </div>
