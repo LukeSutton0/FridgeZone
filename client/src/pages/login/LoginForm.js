@@ -34,7 +34,6 @@ const LoginForm = () => {
                         value={password}
                         placeholder = "Password"
                         onChange={(e) => setPassword(e.target.value)}/>
-
                     <button className={classes.btn} disabled={isLoading}>Submit</button>
                     {error && <div className="error">{error}</div>}
                 </form>
