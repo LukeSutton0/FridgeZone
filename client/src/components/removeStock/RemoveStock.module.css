@@ -2,25 +2,35 @@
 
     border-radius: 4px;
     margin:5px;
+    text-overflow: ellipsis;  /* text over flow to prevent words overflowing*/
+    overflow: auto;
+    ;
   }
   .stockRemoveDiv{
     display:flex;
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: flex-start;
+    
   }
   
   .stockRemoveIndividual{
     width:100%;
     margin:1px;
     display:flex;
+    text-overflow: ellipsis;
+    overflow: auto;
   }
   
   .stockRemoveIndividual div{
     width:20%;
+    text-overflow: ellipsis;
+    overflow: auto;
   }
   .stockIdDiv{
     width:20%;
+    text-overflow: ellipsis;
+    overflow: auto;
   }
   .RemoveStockRemoveDiv{
     display:Flex;
@@ -28,6 +38,8 @@
   .RemoveStockRemoveDiv input{
     margin-right: 5px;
     width:50px;
+    text-overflow: ellipsis;
+    overflow: auto;
   }
 
   .stockRemoveHeaderDiv{

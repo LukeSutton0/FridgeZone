@@ -2,7 +2,9 @@ const mongoose = require('mongoose')
 const bcrypt = require('bcrypt')
 const Schema = mongoose.Schema
 const validator = require('validator')
-const userSchema = new Schema({
+const User = require('./userModel.js')
+
+const tempUserSchema = new Schema({
     username:{
         type: String,
         required:true,
@@ -28,8 +30,8 @@ const userSchema = new Schema({
 
 //static signup method
 
-userSchema.statics.signUp = async function(username,password,jobtitle,fullname,storecode) {
-    //validation
+tempUserSchema.statics.signUp = async function(username,password,jobtitle,fullname,storecode) {
+    
     if(!username || !password || !jobtitle || !fullname || !storecode){
         throw Error ('All fields must be filled')
     }
@@ -39,36 +41,31 @@ userSchema.statics.signUp = async function(username,password,jobtitle,fullname,s
 // { minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1, 
 //returnScore: false, pointsPerUnique: 1, pointsPerRepeat: 0.5, pointsForContainingLower: 10,
 // pointsForContainingUpper: 10, pointsForContainingNumber: 10, pointsForContainingSymbol: 10 }
-    //password hash
-    // const salt = await bcrypt.genSalt(10)
-    // const hash = await bcrypt.hash(password,salt)
-    //        password:hash,
+    const exists =  await User.findOne({"username":username})
+    const existsInTemp =  await this.findOne({"username":username})
+    //check username not taken in users or temp
+    if (exists || existsInTemp){
+        throw Error("Username already in use")
+    }
 
-    const user = await this.create({
+    const storeExists = await User.findOne({"storecode":storecode})
+
+    if(!storeExists){
+        throw Error("Store code not found")
+    }
+    //password hash
+    const salt = await bcrypt.genSalt(10)
+    const hash = await bcrypt.hash(password,salt)
+    const tempUser = await this.create({
         username,
-        password,
+        password:hash,
         jobtitle,
         fullname,
         storecode
     })
-    return user
-}
-
-userSchema.statics.login = async function(username,password){
-    if(!username || !password){
-        throw Error ('Enter email and password')
-    }
-    const user =  await this.findOne({username})
-    if (!user){
-        throw Error("Username not found")
-    }
-    const match = await bcrypt.compare(password,user.password)
-    if(!match){
-        throw Error("Incorrect Password")
-    }
-    return user
+    return tempUser
 }
 
 
 
-module.exports = mongoose.model('User',userSchema)
+module.exports = mongoose.model('TempUser',tempUserSchema)

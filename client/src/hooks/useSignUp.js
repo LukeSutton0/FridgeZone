@@ -12,7 +12,8 @@ export const useSignUp = () =>{
         setIsLoading(true)
         setError(null)
         try{
-            const response = await fetch('http://localhost:4000/user/signup',{
+            //http://localhost:4000/user/signup
+            const response = await fetch('http://localhost:4000/tempuser/signup',{
                 method: "POST",
                 headers:{'Accept':'application/json','Content-Type': 'application/json'},
                 body: JSON.stringify({username,password,jobtitle,fullname,storecode})
@@ -27,7 +28,7 @@ export const useSignUp = () =>{
                 localStorage.setItem('user',JSON.stringify(json))
                 dispatch({type: 'LOGIN', payload:json})
                 setIsLoading(false)
-                navigate('/home');
+                navigate('/Confirmation');
             }
         }
         catch(error){
