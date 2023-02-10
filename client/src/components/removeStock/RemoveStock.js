@@ -47,8 +47,6 @@ const handleClick = () =>{
   }
 }
 
-
-
   return (
     <Fragment>
       <div className={classes.addStockContainer}>
