@@ -23,6 +23,8 @@ button, input[type="button"], input[type="submit"] {
   background-color: #0d6efd; 
   color: white;
   border: none;
+  margin: 1px;
+  margin-bottom: 2px;
 
 
 } 
