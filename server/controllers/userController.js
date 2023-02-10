@@ -1,5 +1,7 @@
 const User = require('../models/userModel.js')
 const jwt = require('jsonwebtoken')
+const validator = require('validator')
+const bcrypt = require('bcrypt')
 
 const createToken = (_id) => {
     return jwt.sign({_id:_id},process.env.SECRET,{expiresIn:'2d'})
@@ -22,6 +24,41 @@ const loginUser = async(req,res)=>{
     }
 }
 
+
+//view
+
+const viewUsers = async(req,res)=>{
+    const{storecode} = req.body
+    //console.log(storecode)
+    try{
+        const users = await User.find({"storecode":storecode})
+        res.status(200).json(users)
+    }
+    catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
+
+
+//change pass
+
+const changePass = async(req,res)=>{
+    const{storecode,newPass,_id} = req.body
+    try{
+        if (!validator.isStrongPassword(newPass,{minLength:4})){
+            throw Error ('Password requires minimum 4 characters: 1 lowercase, 1 uppercase 1 symbol, 1 number')
+        }
+        const salt = await bcrypt.genSalt(10)
+        const hash = await bcrypt.hash(newPass,salt)
+        const userUpdated = await User.findOneAndUpdate({"storecode":storecode,"_id":_id},{"password":hash},{new:true})
+        res.status(200).json(userUpdated)
+    }
+    catch(error){
+        res.status(400).json({error:error.message})
+    }
+}
+
+
 //signUp
 
 const signUpUser = async(req,res)=>{
@@ -41,6 +78,8 @@ const signUpUser = async(req,res)=>{
 
 module.exports = {
     loginUser,
-    signUpUser
+    signUpUser,
+    viewUsers,
+    changePass
 }
 

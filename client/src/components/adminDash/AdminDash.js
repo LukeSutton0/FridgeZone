@@ -13,24 +13,21 @@ const AdminDash = () => {
 
     const {user} = useAuthContext()
     const [sectionOpen,setSectionOpen] = useState(null)
-
     const handleClick = (param) =>{
         setSectionOpen(param)
-        console.log(param)
     }
 
 
     return(
         <Fragment>
-            <h1>Admin Dashboard</h1>
-
-            <button onClick={() => handleClick('ChangePass')}>Change Pass</button>
-            <button onClick={() => handleClick('ChangeRole')}>Change Role</button>
-            <button onClick={() => handleClick('RemoveUser')}>Remove User</button>
-
+            <h1>Admin Dashboard</h1>            
+            <button onClick={() => handleClick('ChangePass')}>Change Password</button>
             {sectionOpen === 'ChangePass' && <ChangePass />}
+            <button onClick={() => handleClick('ChangeRole')}>Change Role</button>
             {sectionOpen === 'ChangeRole' && <ChangeRole />}
+            <button onClick={() => handleClick('RemoveUser')}>Remove User</button>
             {sectionOpen === 'RemoveUser' && <RemoveUser />}
+            
         </Fragment>
         
     )
