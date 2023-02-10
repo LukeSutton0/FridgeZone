@@ -28,6 +28,18 @@ const Home = () => {
       };
     }, []);
 
+    const [date, setDate] = useState(new Date().toLocaleDateString());
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        setDate(new Date().toLocaleDateString());
+      }, 1000);
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, []);
+
+
 
 
     return (
@@ -76,6 +88,7 @@ const Home = () => {
                             <p>JobTitle:{user.jobtitle}</p>
                             <p>StoreCode:{user.storecode}</p>
                             <p>{time}</p>
+                            <p>{date}</p>
                             <p>Options Available:</p>
                             <ul>
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
