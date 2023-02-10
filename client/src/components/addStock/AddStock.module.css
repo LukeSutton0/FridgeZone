@@ -13,6 +13,13 @@
   .addStockButton[type="submit"] {
     display: block;
     margin: 0 auto;
+    padding: 10px 20px;
+    /* background-color: #333; */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    cursor: pointer;
   }
   
   .addStockResult{

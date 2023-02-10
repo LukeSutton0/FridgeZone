@@ -89,15 +89,16 @@ const Home = () => {
                             )}
                         </div>
                         <div className={classes.homeSideBar}>
-                            <p>User:{user.username}</p>
-                            <p>JobTitle:{user.jobtitle}</p>
-                            <p>StoreCode:{user.storecode}</p>
+                            <p>User:{" " + user.username}</p>
+                            <p>JobTitle:{" " + user.jobtitle}</p>
+                            <p>StoreCode:{" " + user.storecode}</p>
                             <p>{time}</p>
                             <p>{date}</p>
                             <p>Options Available:</p>
                             <ul>
                             {(user.jobtitle == "HeadChef") && (
                                 <li className={classes.link}><Link to="AddUsers" spy={true} offset={-200}>Add Users</Link></li>
+                                <li className="link"><Link to="AddUsers" spy={true} offset={-200}>AddUsers</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <li className={classes.link}><Link to="OpenDoor" spy={true} offset={-200}>Open Door</Link></li>

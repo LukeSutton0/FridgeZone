@@ -58,7 +58,7 @@ const RemoveStockDetails = ({stock}) => {
                         value={quantityToRemove}
                         placeholder = "0"
                         onChange={(e) => setQuantityToRemove(e.target.value)}/>
-                    <button>Remove</button>
+                    <button className={classes.RemoveButton}>Remove</button>
                 </div>
         </form>
     )

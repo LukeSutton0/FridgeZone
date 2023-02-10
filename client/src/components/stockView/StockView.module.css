@@ -38,6 +38,16 @@
 .stockViewHeaderDiv button{
   margin-bottom: 5vh;
   margin-left: 2vw;
-  text-overflow: ellipsis;
-    
+  /* background-color: #333; */
+  color: #fff;
+}
+@media (max-width: 1200px) {
+  .stockViewIndividual div {
+    width: 50%;
+  }
+  
+  .stockHeaderDiv button {
+    margin-bottom: 2vh;
+    margin-left: 1vw;
+  }
 }

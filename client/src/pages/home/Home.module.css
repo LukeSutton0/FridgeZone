@@ -10,7 +10,6 @@
     width:100%;
 }
 
-
 .homeSideBar{
     width:300px;
     position: sticky;
@@ -53,6 +52,7 @@
     justify-content: center;
 }
 
+
 .link {
   display: inline-block;
   padding: 10px 20px;
@@ -82,3 +82,4 @@
     text-decoration: none;
     color:rgb(195, 195, 195);
 }
+
