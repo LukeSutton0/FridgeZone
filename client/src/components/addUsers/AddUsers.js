@@ -22,7 +22,6 @@ const AddUsers = () => {
                 const json = await response.json()
                 if (response.ok) {
                     setResultArray(json)
-            
                   }
             }
             catch(error){
@@ -46,9 +45,37 @@ const AddUsers = () => {
 
     }, [user]);
 
+
+    const handleClick = () =>{
+        if (user){
+          const refreshAddUsers = async () => {
+            //console.log(JSON.stringify({storecode}))
+            try{
+                //http://localhost:4000/user/signup
+                const response = await fetch('http://localhost:4000/tempUser/view',{
+                    method: "POST",
+                    headers:{'Accept':'application/json','Content-Type': 'application/json','Authorisation':`Bearer ${user.token}`},
+                    body: JSON.stringify({storecode})
+                })
+                const json = await response.json()
+                if (response.ok) {
+                    setResultArray(json)
+                  }
+            }
+            catch(error){
+                console.log({error})
+            }
+        }
+        refreshAddUsers();
+      }
+    }
+
     return (
         <Fragment>
-            <h1>Add Users</h1>
+            <div className={classes.resultArrayHeaderDiv}>
+                <h1>Add Users</h1>
+                <button onClick={handleClick}>Refresh</button>
+            </div>
             <div className={classes.resultArrayDiv}>
             <div className={classes.resultArrayIndividual}>
                 <div>

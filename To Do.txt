@@ -4,7 +4,6 @@ High Prio:
 admin page
 notifications
 Tutorial page
-accept into database
 
 Medium Prio:
 styling of pages:
@@ -19,6 +18,7 @@ door open close database
 driver and health and safety have different main page
 capitalise stock items on entry
 updates items after time
+home back to top
 
 ACCESS: HeadChef for all
 Open door - driver
