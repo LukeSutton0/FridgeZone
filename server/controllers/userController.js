@@ -25,6 +25,7 @@ const loginUser = async(req,res)=>{
 //signUp
 
 const signUpUser = async(req,res)=>{
+    //not needed got temp user
     const{username,password,jobtitle,fullname,storecode} = req.body
     try{
         const user = await User.signUp(username,password,jobtitle,fullname,storecode)

@@ -10,7 +10,7 @@ const getHealthReports = async(req,res)=>{
     const storecodeToFind = storecode;
     try{
         const reportEntries = await HealthReport.find({"storecode":storecodeToFind}).sort({dateOfReport:+1})
-        console.log(reportEntries)
+        //console.log(reportEntries)
         res.status(200).json(reportEntries)
     }
     catch(error){

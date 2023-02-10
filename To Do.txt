@@ -4,7 +4,6 @@ High Prio:
 admin page
 notifications
 Tutorial page
-accept into database
 
 Medium Prio:
 styling of pages:
@@ -17,6 +16,9 @@ set dates to red on view stock if out of date
 change dates to orange if stock going out of date this week
 door open close database
 driver and health and safety have different main page
+capitalise stock items on entry
+updates items after time
+home back to top
 
 ACCESS: HeadChef for all
 Open door - driver
@@ -27,13 +29,23 @@ Health &S - H&S officer
 Admin - HeadC
 
 
-Styling you can do:
-
-Door status
+Styling you can do:.
 side bar
-current stock
-add stock
-footer user name?
+stock - view add remove
+footer user name
+
+
+download from github
+new cmd
+cd to client
+npm install
+npm start
+
+new cmd
+cd to server
+npm install
+npm install -g nodemon
+nodemon server.js
 
 
 

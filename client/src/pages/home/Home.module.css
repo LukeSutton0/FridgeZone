@@ -9,6 +9,8 @@
     justify-content: flex-end;
     width:100%;
 }
+
+
 .homeSideBar{
     width:300px;
     position: sticky;
@@ -16,6 +18,20 @@
     height:100vh;
     border-left: 1px solid rgb(214, 214, 214) ;
     padding:10px
+}
+
+@media (max-width: 700px) {
+    .homeLayoutDiv{
+        flex-direction: column;
+        flex-flow: column-reverse;
+    }
+    .homeSideBar{
+        position: relative;
+        top:1vh;
+        height:auto;
+        border-left: 1px solid rgb(214, 214, 214) ;
+        padding:10px
+    }
 }
 
 .homeFunctionDivBox{

@@ -12,7 +12,7 @@ import MainScreen from './pages/mainScreen/MainScreen.js'
 import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
-
+import Confirmation from './pages/confirmation/Confirmation.js'
 
 
 function App() {
@@ -22,13 +22,15 @@ function App() {
         <MainHeader/>
         <div className="content">
           <Routes>
-            <Route path="/" element={<MainScreen/>} onEnter={requireAuth}>
+            <Route path="/" element={<MainScreen/>}>
             </Route>
             <Route path="*" element={<ErrorContent/>}>
             </Route>
             <Route path="/signup" element={<SignUp/>}>
             </Route>
             <Route path="/login" element={<Login/>}>
+            </Route>
+            <Route path="/confirmation" element={<Confirmation/>}>
             </Route>
             <Route path="/home" element={<Home/>} onEnter={useAuthContext}>
             </Route>

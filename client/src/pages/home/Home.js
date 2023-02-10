@@ -1,4 +1,4 @@
-import React from "react";
+import React, { Fragment, useEffect, useState } from "react";
 import classes from './Home.module.css'
 import { useAuthContext } from "../../hooks/useAuthContext";
 import {useNavigate} from 'react-router-dom'
@@ -16,6 +16,32 @@ import HealthAndSafety from "../../components/healthSafetyReport/HealthAndSafety
 const Home = () => {  
     const {user} = useAuthContext()
     const navigate = useNavigate()
+
+    const [time, setTime] = useState(new Date().toLocaleTimeString());
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        setTime(new Date().toLocaleTimeString());
+      }, 1000);
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, []);
+
+    const [date, setDate] = useState(new Date().toLocaleDateString());
+    useEffect(() => {
+      const intervalId = setInterval(() => {
+        setDate(new Date().toLocaleDateString());
+      }, 1000);
+  
+      return () => {
+        clearInterval(intervalId);
+      };
+    }, []);
+
+
+
+
     return (
         <div className={classes.inputBox}>
             {user && (
@@ -23,12 +49,12 @@ const Home = () => {
                         <div className={classes.homeFunctionDivBox}>
                             {(user.jobtitle == "HeadChef") && (
                                 <div className={classes.homeDivBox} id="AddUsers">
-                                <AddUsers/>
+                                    <AddUsers/>
                                 </div>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <div className={classes.homeDivBox} id="OpenDoor">
-                                <OpenDoor/>
+                                    <OpenDoor/>
                                 </div>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "Chef") && (
@@ -61,6 +87,8 @@ const Home = () => {
                             <p>User:{user.username}</p>
                             <p>JobTitle:{user.jobtitle}</p>
                             <p>StoreCode:{user.storecode}</p>
+                            <p>{time}</p>
+                            <p>{date}</p>
                             <p>Options Available:</p>
                             <ul>
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
