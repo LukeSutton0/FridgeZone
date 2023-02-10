@@ -1,0 +1,39 @@
+.resultArrayIndividual{
+  width:100%;
+  margin:1px;
+  display:flex;
+
+}
+.Individual div{
+    width:20%;
+  }
+
+.resultArray {
+border-radius: 4px;
+margin:5px;
+}
+.resultArrayDiv{
+display:flex;
+flex-direction: row;
+flex-wrap: wrap;
+justify-content: flex-start;
+}
+
+.resultArrayIndividual{
+width:100%;
+margin:1px;
+display:flex;
+}
+
+.resultArrayIndividual div{
+width:20%;
+}
+.resultArrayHeaderDiv{
+display:flex;
+justify-content: center;
+align-items: center;
+}
+.resultArrayHeaderDiv button{
+margin-bottom: 5vh;
+margin-left: 2vw;
+}

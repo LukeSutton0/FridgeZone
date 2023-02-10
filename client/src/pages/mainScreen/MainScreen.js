@@ -5,8 +5,9 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import { useNavigate } from "react-router-dom";
 
 //add comments so we know whats going on with your initials
-const SignUp = () =>{
+const MainPage = () =>{
   const navigate = useNavigate();
+
     return(
         <div className={classes.inputBox}>
           <Button variant="primary" onClick={()=> {
@@ -21,4 +22,4 @@ const SignUp = () =>{
     )
 }
 
-export default SignUp;
+export default MainPage;
