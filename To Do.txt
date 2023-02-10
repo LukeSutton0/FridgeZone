@@ -19,6 +19,7 @@ driver and health and safety have different main page
 capitalise stock items on entry
 updates items after time
 home back to top
+convert all usernames to lowercase
 
 ACCESS: HeadChef for all
 Open door - driver
