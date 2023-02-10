@@ -39,20 +39,14 @@ userSchema.statics.signUp = async function(username,password,jobtitle,fullname,s
 // { minLength: 8, minLowercase: 1, minUppercase: 1, minNumbers: 1, minSymbols: 1, 
 //returnScore: false, pointsPerUnique: 1, pointsPerRepeat: 0.5, pointsForContainingLower: 10,
 // pointsForContainingUpper: 10, pointsForContainingNumber: 10, pointsForContainingSymbol: 10 }
-    const exists =  await this.findOne({username})
-    if (exists){
-        throw Error("Username already in use")
-    }
-    const storeExists = await this.findOne({storecode})
-    if(!storeExists){
-        throw Error("Store code not found")
-    }
     //password hash
-    const salt = await bcrypt.genSalt(10)
-    const hash = await bcrypt.hash(password,salt)
+    // const salt = await bcrypt.genSalt(10)
+    // const hash = await bcrypt.hash(password,salt)
+    //        password:hash,
+
     const user = await this.create({
         username,
-        password:hash,
+        password,
         jobtitle,
         fullname,
         storecode
@@ -69,7 +63,6 @@ userSchema.statics.login = async function(username,password){
         throw Error("Username not found")
     }
     const match = await bcrypt.compare(password,user.password)
-
     if(!match){
         throw Error("Incorrect Password")
     }

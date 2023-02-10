@@ -29,7 +29,7 @@ Health &S - H&S officer
 Admin - HeadC
 
 
-Styling you can do:
+Styling you can do:.
 side bar
 stock - view add remove
 footer user name

@@ -68,6 +68,7 @@ const addTempUser = async(req,res)=>{
 
         let username = userToAdd.username
         let password = userToAdd.password
+        
         let jobtitle = userToAdd.jobtitle
         let fullname = userToAdd.fullname
         let storecode = userToAdd.storecode
