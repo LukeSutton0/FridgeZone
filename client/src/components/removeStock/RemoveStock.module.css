@@ -40,7 +40,7 @@
   .RemoveStockRemoveDiv input{
     margin-right: 5px;
     width:50px;
-    background-color: #333;
+    /* background-color: #333; */
     color: #fff;
     
     text-overflow: ellipsis;
@@ -57,11 +57,11 @@
   .stockRemoveHeaderDiv button{
     margin-bottom: 5vh;
     margin-left: 2vw;
-    background-color: #333;
+    /* background-color: #333; */
     color: #fff;
   }
   .RemoveButton{
-    background-color: #333;
+    /* background-color: #333; */
     color: #fff;
   }
   @media (max-width: 1200px) {

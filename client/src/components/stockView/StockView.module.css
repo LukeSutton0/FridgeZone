@@ -38,7 +38,7 @@
 .stockViewHeaderDiv button{
   margin-bottom: 5vh;
   margin-left: 2vw;
-  background-color: #333;
+  /* background-color: #333; */
   color: #fff;
 }
 @media (max-width: 1200px) {
@@ -51,7 +51,3 @@
     margin-left: 1vw;
   }
 }
-  text-overflow: ellipsis;
-    
-}
-main
