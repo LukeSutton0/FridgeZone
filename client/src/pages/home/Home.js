@@ -89,9 +89,9 @@ const Home = () => {
                             )}
                         </div>
                         <div className={classes.homeSideBar}>
-                            <p>User:{user.username}</p>
-                            <p>JobTitle:{user.jobtitle}</p>
-                            <p>StoreCode:{user.storecode}</p>
+                            <p>User:{" " + user.username}</p>
+                            <p>JobTitle:{" " + user.jobtitle}</p>
+                            <p>StoreCode:{" " + user.storecode}</p>
                             <p>{time}</p>
                             <p>{date}</p>
                             <p>Options Available:</p>
