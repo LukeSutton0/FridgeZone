@@ -1,7 +1,7 @@
 import React, { useEffect, useState,Fragment } from "react";
 import classes from './Notifications.module.css'
 import { useAuthContext } from "../../hooks/useAuthContext";
-
+import NotificationDetails from "./NotificationDetails";
 
 const Notifications = () =>{
     const {user} = useAuthContext()
@@ -55,7 +55,7 @@ return(
           <div className={classes.notificationDiv}>
             <div className={classes.notificationIndividual}>
                 <div>
-                    <p>Title:</p>
+                    <p>Type:</p>
                 </div>
                 <div>
                     <p>Description:</p>
@@ -64,9 +64,9 @@ return(
                     <p>Clear?:</p>
                 </div>
             </div>
-            {/* {notification && notification.map((notification) => (
+            {notification && notification.map((notification) => (
               <NotificationDetails key={notification._id} notification={notification} />
-            ))} */}
+            ))}
           </div>
         </div>
     </Fragment>

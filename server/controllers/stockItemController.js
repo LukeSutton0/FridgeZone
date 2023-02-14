@@ -104,39 +104,48 @@ const updateStockItem = async(req,res) =>{
 const checkStockExpired = async () => {
     console.log("running cron")
     // check if stock out of date at midnight
-    //store 1 for now
-    const storecode = "1"
+    const storecodes = ["1","2","3"]
+    //const storecode = "1"
+
     let dateObj = new Date();
     let month = dateObj.getUTCMonth() + 1; //months from 1-12
     let day = dateObj.getUTCDate();
     let year = dateObj.getUTCFullYear();
     const expDate = year + "-0" + month + "-" + day;
-    const stockExpired = await StockItem.find({"storecode":storecode,"expiryDate":{$lt:expDate}});
 
-    
-    // try{
-    //     for(let i = 0 ; i<stockExpired.length; i++){
-    //         //const{title,description,storecode} = req.body
-    //         let title = "3 Days To Expire"
-    //         let description = "Item Expired: " + stockExpired[i].name
-    //         let storecode = stockExpired[i].storecode
-    //         console.log(title,description,storecode)
-    //         const insertedNotifications = await Notification.create({title,description,storecode})
+    try{
+        let title = "3 Days To Expire"
+        //for each store
+        for(let i = 0; i<storecodes.length; i++){
+            let storecode = storecodes[i]
+            const stockExpired = await StockItem.find({"storecode":storecode,"expiryDate":{$lt:expDate}});
+            if(stockExpired.length != 0){
+                let description = "Item(s) with expiration below 3 days: "
+                //for each item expired in the store
+                for(let j = 0 ; j<stockExpired.length; j++){
+                    description = description + stockExpired[j].name + ", "             
+                }  
+                const insertedNotifications = await Notification.create({title,description,storecode})
+            }
             
-    //     }
-    // }
-    // catch(error){
-    //     console.log(error)
-    // }
+        }
+        
+    }
+    catch(error){
+        console.log(error)
+    }
     
-    //
+    
 
   };
   
-
-const midnightCheckStock = new cron.CronJob("5 * * * * *", checkStockExpired);
+//check every 24 hours
+const midnightCheckStock = new cron.CronJob("0 0 0 * * *", checkStockExpired);
 midnightCheckStock.start();
 
+// *second*minute*hour*day of month*month*day of week
+//0-59,0-59,0-23,1-31,1-12 or names,0-7
+//0 0 0 * * *
  
 
 

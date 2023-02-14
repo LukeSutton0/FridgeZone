@@ -20,19 +20,7 @@
     font-weight: bolder;
 }
 
-@media (max-width: 700px) {
-    .homeLayoutDiv{
-        flex-direction: column;
-        flex-flow: column-reverse;
-    }
-    .homeSideBar{
-        position: relative;
-        top:1vh;
-        height:auto;
-        border-left: 1px solid rgb(214, 214, 214) ;
-        padding:10px
-    }
-}
+
 
 .homeFunctionDivBox{
     width: 100%;
@@ -51,7 +39,6 @@
     align-items: center;
     justify-content: center;
 }
-
 
 .link {
   display: inline-block;
@@ -83,3 +70,35 @@
     color:rgb(195, 195, 195);
 }
 
+
+
+@media (max-width: 700px) {
+    .homeLayoutDiv{
+        flex-direction: column;
+        flex-flow: column-reverse;
+    }
+    .homeSideBar{
+        position: relative;
+        top:1vh;
+        height:auto;
+        width:100%;
+        border-left: 1px solid rgb(214, 214, 214) ;
+        display:flex;
+        flex-direction: column;
+        justify-content: center;
+        text-align: center;
+    }
+    .sideBarUnList{
+        display:grid;
+        grid-template-columns: auto auto;
+        row-gap: 8px;
+    }
+    .link{
+        justify-self: center;
+        align-self: center;
+    }
+    .linkHealth {
+        height: 60px;
+    }
+
+}

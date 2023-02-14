@@ -51,3 +51,12 @@
     margin-left: 1vw;
   }
 }
+
+@media (max-width: 700px) {
+  .stockDetails{
+    overflow:hidden;
+    word-wrap: break-word;
+    max-width: 100%;
+  }
+
+}

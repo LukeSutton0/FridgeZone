@@ -24,8 +24,4 @@ const ReportDetails = ({report}) => {
         </div>
     )
 }
-// {report.map((report) => (
-//     <HealthAndSafetyReportDetailItems key={report.itemsExpired} report={report} />
-//     ))}
-//{report.itemsExpired}
 export default ReportDetails;

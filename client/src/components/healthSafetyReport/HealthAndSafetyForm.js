@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { Fragment, useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 import classes from "./HealthAndSafety.module.css"
 
@@ -28,6 +28,7 @@ const CreateHealthForm = () => {
         setError("Ensure connection is stable")
       }
     if (response.ok) {
+      console.log("a")
       setMessage(` Report Generated Successfully`)
       setError(null)
       //console.log('New stock added:', json)
@@ -36,9 +37,17 @@ const CreateHealthForm = () => {
   }
 
   return (
-    <form onSubmit={handleSubmit}> 
-      <button type="submit" className={classes.addStockButton}>Generate Report</button>
-    </form>
+    <Fragment>
+      <form onSubmit={handleSubmit}> 
+        <button type="submit" className={classes.addStockButton}>Generate Report</button>
+      </form>
+      {error &&(
+        <div className={classes.error}>{error}</div>
+      )}
+      {message &&(
+          <div className={classes.message}>{message}</div>
+      )}
+    </Fragment>
   )
 }
 

@@ -55,7 +55,7 @@ const HealthAndSafety = () => {
         <h1>Health And Safety Report</h1>
         <button onClick={handleClick}>Refresh</button>
       </div>
-      <div>
+      <div className={classes.healthSafetyHeaderButtonFormDiv}>
         <HealthAndSafetyForm/>
       </div>
     

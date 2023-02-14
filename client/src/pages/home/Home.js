@@ -101,7 +101,7 @@ const Home = () => {
                             <p>{time}</p>
                             <p>{date}</p>
                             <p>Options Available:</p>
-                            <ul>
+                            <ul className={classes.sideBarUnList}>
                             {(user.jobtitle == "HeadChef") && (
                                 <li className={classes.link}><Link to="Notifications" spy={true} offset={-200}>Notifications</Link></li>
                             )}
@@ -121,14 +121,12 @@ const Home = () => {
                                 <li className={classes.link}><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
-                                <li className={`${classes.link} ${classes.linkHealth}`}><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
+                                <li className={`${classes.link} ${classes.linkHealth}`}><Link to="HealthAndSafety" spy={true} offset={-200}>Health And Safety Report</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef") && (
-                                <li className={classes.link}><Link to="AdminDash" spy={true} offset={-200}>Admin Dash</Link></li>
+                                <li className={`${classes.link} ${classes.linkAdmin}`}><Link to="AdminDash" spy={true} offset={-200}>Admin Dash</Link></li>
                             )}
-                             {(user.jobtitle == "" || user.jobtitle == "") && (
-                                <li className={classes.link}><a></a></li>
-                            )}
+                            
                             </ul>
                         </div>
                     </div>
