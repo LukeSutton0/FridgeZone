@@ -23,13 +23,13 @@
 }
 
 .open {
-  background-image: url('../../assets/fridge_open.png');
+  background-image: url('../../Assets/fridge_open.png');
   width: 200px;
   height: 200px;
 }
 
 .closed {
-  background-image: url('../../assets/fridge_closed.png');
+  background-image: url('../../Assets/fridge_closed.png');
   width: 200px;
   height: 200px;
 }

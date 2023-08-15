@@ -78,3 +78,20 @@
       margin-left: 1vw;
     }
   }
+
+  @media (max-width: 700px) {
+    .stockRemoveDiv{
+      overflow:hidden;
+      word-wrap: break-word;
+      max-width: 100%;
+    }
+    .RemoveButton{
+      height:20px;
+      width:50px;
+    }
+    .RemoveStockRemoveDiv{
+      display:flex;
+      flex-direction: column;
+      align-items: center;
+    }
+  }

@@ -12,7 +12,7 @@ import AddStock from "../../components/addStock/AddStock.js"
 import RemoveStock from "../../components/removeStock/RemoveStock.js"
 import HealthAndSafety from "../../components/healthSafetyReport/HealthAndSafety";
 import AdminDashboard from "../../components/adminDash/AdminDash.js"
-
+import Notifications from "../../components/notifications/Notifications.js"
 const Home = () => {  
     const {user} = useAuthContext()
     const navigate = useNavigate()
@@ -22,7 +22,8 @@ const Home = () => {
       const intervalId = setInterval(() => {
         setTime(new Date().toLocaleTimeString());
       }, 1000);
-  
+    
+    
       return () => {
         clearInterval(intervalId);
       };
@@ -47,6 +48,11 @@ const Home = () => {
             {user && (
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
+                            {(user.jobtitle == "HeadChef") && (
+                                    <div className={classes.homeDivBox} id="AddUsers">
+                                        <Notifications/>
+                                    </div>
+                            )}
                             {(user.jobtitle == "HeadChef") && (
                                 <div className={classes.homeDivBox} id="AddUsers">
                                     <AddUsers/>
@@ -95,10 +101,12 @@ const Home = () => {
                             <p>{time}</p>
                             <p>{date}</p>
                             <p>Options Available:</p>
-                            <ul>
+                            <ul className={classes.sideBarUnList}>
+                            {(user.jobtitle == "HeadChef") && (
+                                <li className={classes.link}><Link to="Notifications" spy={true} offset={-200}>Notifications</Link></li>
+                            )}
                             {(user.jobtitle == "HeadChef") && (
                                 <li className={classes.link}><Link to="AddUsers" spy={true} offset={-200}>Add Users</Link></li>
-                                <li className="link"><Link to="AddUsers" spy={true} offset={-200}>AddUsers</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "DeliveryDriver") && (
                                 <li className={classes.link}><Link to="OpenDoor" spy={true} offset={-200}>Open Door</Link></li>
@@ -113,14 +121,12 @@ const Home = () => {
                                 <li className={classes.link}><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef" || user.jobtitle == "HealthAndSafetyOfficer") && (
-                                <li className={`${classes.link} ${classes.linkHealth}`}><Link to="HealthAndSafety" spy={true} offset={-300}>Health And Safety Report</Link></li>
+                                <li className={`${classes.link} ${classes.linkHealth}`}><Link to="HealthAndSafety" spy={true} offset={-200}>Health And Safety Report</Link></li>
                             )}
                             {(user.jobtitle == "HeadChef") && (
-                                <li className={classes.link}><Link to="AdminDash" spy={true} offset={-200}>Admin Dash</Link></li>
+                                <li className={`${classes.link} ${classes.linkAdmin}`}><Link to="AdminDash" spy={true} offset={-200}>Admin Dash</Link></li>
                             )}
-                             {(user.jobtitle == "" || user.jobtitle == "") && (
-                                <li className={classes.link}><a></a></li>
-                            )}
+                            
                             </ul>
                         </div>
                     </div>

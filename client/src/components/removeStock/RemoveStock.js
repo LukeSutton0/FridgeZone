@@ -49,7 +49,6 @@ const handleClick = () =>{
 
   return (
     <Fragment>
-      <div className={classes.addStockContainer}>
         <div className={classes.stockRemoveHeaderDiv}>
               <h1>Remove Stock</h1>
               <button onClick={handleClick}>Refresh</button>
@@ -77,7 +76,6 @@ const handleClick = () =>{
             ))}
           </div>
 
-      </div>
     </Fragment>
   )
 }

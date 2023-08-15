@@ -1,6 +1,7 @@
 const StockItem = require('../models/stockItemModel.js')
 const mongoose = require('mongoose')
-
+const cron = require("cron");
+const Notification = require('../models/notificationModel.js')
 //get all stock
 
 const getStockItems = async(req,res)=>{
@@ -100,6 +101,56 @@ const updateStockItem = async(req,res) =>{
     }
 }
 
+const checkStockExpired = async () => {
+    console.log("running cron")
+    // check if stock out of date at midnight
+    const storecodes = ["1","2","3"]
+    //const storecode = "1"
+
+    let dateObj = new Date();
+    let month = dateObj.getUTCMonth() + 1; //months from 1-12
+    let day = dateObj.getUTCDate();
+    let year = dateObj.getUTCFullYear();
+    const expDate = year + "-0" + month + "-" + day;
+
+    try{
+        let title = "3 Days To Expire"
+        //for each store
+        for(let i = 0; i<storecodes.length; i++){
+            let storecode = storecodes[i]
+            const stockExpired = await StockItem.find({"storecode":storecode,"expiryDate":{$lt:expDate}});
+            if(stockExpired.length != 0){
+                let description = "Item(s) with expiration below 3 days: "
+                //for each item expired in the store
+                for(let j = 0 ; j<stockExpired.length; j++){
+                    description = description + stockExpired[j].name + ", "             
+                }  
+                const insertedNotifications = await Notification.create({title,description,storecode})
+            }
+            
+        }
+        
+    }
+    catch(error){
+        console.log(error)
+    }
+    
+    
+
+  };
+  
+//check every 24 hours
+const midnightCheckStock = new cron.CronJob("0 0 0 * * *", checkStockExpired);
+midnightCheckStock.start();
+
+// *second*minute*hour*day of month*month*day of week
+//0-59,0-59,0-23,1-31,1-12 or names,0-7
+//0 0 0 * * *
+ 
+
+
+
+
 module.exports = {
     getStockItems,
     getStockItem,
@@ -107,5 +158,5 @@ module.exports = {
     deleteStockItem,
     updateStockItem,
     viewStockItems,
-
+    checkStockExpired
 }
