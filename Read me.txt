@@ -1,0 +1,15 @@
+How to use until I sort out package:
+download from github
+new cmd
+cd to client
+npm install
+npm start
+
+new cmd
+cd to server
+npm install
+npm install -g nodemon
+nodemon server.js
+
+
+
