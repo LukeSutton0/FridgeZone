@@ -3,7 +3,7 @@
 
 Youtube link showing project- https://youtu.be/pGlmAs8zi4A
 
-How to use until I sort out a package manager:
+How to use until I sort out docker:
 
 download from github, open in editor
 
