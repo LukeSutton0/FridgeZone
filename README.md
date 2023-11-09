@@ -3,17 +3,25 @@
 
 Demo Video and Walkthrough - https://youtu.be/pGlmAs8zi4A
 
+***********************************************************
 For the team:
-How to use until I sort out docker:
-download from github, open in editor
-new terminal
-cd to client
-npm install
-npm start
 
-Seperate terminal
-cd to server
-npm install
-npm install -g nodemon
-nodemon server.js
+How to install until I sort out the docker image:
+
+
+Download from github
+
+
+Terminal 1: 
+
+1) cd to client
+2) npm install
+3) npm start
+
+
+Terminal 2:
+1) cd to server
+2) npm install
+3) npm install -g nodemon
+4) nodemon server.js
 
