@@ -9,8 +9,7 @@ A Demo video and walkthrough can be found here -
 
 https://www.youtube.com/watch?v=pGlmAs8zi4A
 
-Screenshot of main UI
-
+Screenshot of main UI:
 ![image](https://github.com/LukeSutton0/Fridgezone-MERN-stack/assets/80263461/60c14361-6911-4b64-a47e-c7530fd39a37)
 
 
