@@ -1,4 +1,4 @@
-# Fridgezone-React-and-Mongo-DB
+# Fridgezone-MERN-stack
 **Overview**
 
 "FridgeZone" a combination of MongoDb, Express, React and Node, creating a fully functioning webapp. 
