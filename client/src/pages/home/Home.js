@@ -41,7 +41,7 @@ const Home = () => {
                     <div className={classes.homeLayoutDiv}>
                         <div className={classes.homeFunctionDivBox}>
                             {(user.jobtitle === "HeadChef") && (
-                                    <div className={classes.homeDivBox} id="AddUsers">
+                                    <div className={classes.homeDivBox} id="Notifications">
                                         <Notifications/>
                                     </div>
                             )}

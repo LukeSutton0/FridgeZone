@@ -1,11 +1,10 @@
 import React from 'react';
-import {Link, Navigate, BrowserRouter as Router,Routes,Route} from 'react-router-dom';
+import {Navigate, BrowserRouter as Router,Routes,Route} from 'react-router-dom';
 //module components
 import MainHeader from './components/header/MainHeader.js'
 import MainFooter from './components/footer/Footer.js'
 import ErrorContent  from './components/error/ErrorContent.js'
 //Hooks
-import requireAuth from './hooks/checkForAuth.js'
 import {useAuthContext} from './hooks/useAuthContext.js';
 //Pages
 import MainScreen from './pages/mainScreen/MainScreen.js'
@@ -13,7 +12,6 @@ import SignUp from './pages/signUp/SignUp.js'
 import Login from './pages/login/Login.js'
 import Home from './pages/home/Home.js'
 import Confirmation from './pages/confirmation/Confirmation.js'
-
 
 function App() {
   const {user} = useAuthContext();

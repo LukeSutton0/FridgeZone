@@ -7,7 +7,6 @@ export const useLogin = () =>{
     const [isLoading,setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
     const navigate = useNavigate()
-    
     const login = async(username,password,jobtitle,fullname) => {
         setIsLoading(true)
         setError(null)
@@ -32,7 +31,6 @@ export const useLogin = () =>{
         catch(error){
             console.log({error})
         }
-        
     }
     return {login,isLoading,error}
 }

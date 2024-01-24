@@ -25,8 +25,7 @@ const DeliveryRecord = () => {
         'Authorisation':`Bearer ${user.token}`
       }
     })
-    const json = await response.json()
-
+    //const json = await response.json()
     if (!response.ok) {
       setError("Ensure all fields are filled")
     }
