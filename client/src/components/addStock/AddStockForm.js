@@ -38,14 +38,11 @@ const DeliveryRecord = () => {
       setExpirydate('')
       setSupplier('')
       //console.log('New stock added:', json)
-      
     }
-
   }
 
   return (
     <form onSubmit={handleSubmit}> 
-
       <input
         className={classes.addStockInput}
         type="text"
@@ -53,8 +50,6 @@ const DeliveryRecord = () => {
         onChange={(e) => setName(e.target.value)} 
         value={name}
       />
-
-    
       <input 
         className={classes.addStockInput} 
         type="number" 
@@ -62,8 +57,6 @@ const DeliveryRecord = () => {
         onChange={(e) => setQuantity(e.target.value)} 
         value={quantity}
       />
-
-   
       <input 
         className={classes.addStockInput}
         type="date" 
@@ -71,7 +64,6 @@ const DeliveryRecord = () => {
         onChange={(e) => setExpirydate(e.target.value)} 
         value={expirydate} 
       />
-
       <input 
         className={classes.addStockInput}
         type="text" 
@@ -79,7 +71,6 @@ const DeliveryRecord = () => {
         onChange={(e) => setSupplier(e.target.value)} 
         value={supplier} 
       />
-
       <button type="submit" className={classes.addStockButton}>Add Item</button>
       {error &&(
         <div className={`${classes.addStockResult} ${classes.addStockError}`}>

@@ -1,5 +1,4 @@
 .footerContainer{
-    
     min-height:100px;
     left: 0;
     bottom: 0;
@@ -10,6 +9,7 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    margin-top: 20px;
 }
 .footerContainer a {
     text-decoration: none;

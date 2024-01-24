@@ -7,7 +7,6 @@ export const useSignUp = () =>{
     const [isLoading,setIsLoading] = useState(null)
     const {dispatch} = useAuthContext()
     const navigate = useNavigate()
-
     const signup = async(username,password,jobtitle,fullname,storecode) => {
         setIsLoading(true)
         setError(null)

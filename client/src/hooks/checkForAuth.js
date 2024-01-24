@@ -1,10 +1,6 @@
 import { useLogin } from "./useLogin"
 
-
 //fix later
-
-
-
  function checkAuth(nextState, replace, next) {
 
 //   const{login} = useLogin()
@@ -17,7 +13,6 @@ import { useLogin } from "./useLogin"
 //     navigate('/home');
 //     }
 
-
 //     //const response = await fetch('/')
 
 //     // if (!authenticated) {
@@ -27,6 +22,6 @@ import { useLogin } from "./useLogin"
 //     //   });
 //     // }
 //     // next();
-  }
+}
 
   export default checkAuth

@@ -68,6 +68,10 @@ The Head Chef can perform most of the available tasks such as:
 
 • and more...
 
+• Test user:
+    • HeadChefStore1
+    • 1Aa#
+
 **ChangeLog & Roadmap**
 
 Final release has been completed.

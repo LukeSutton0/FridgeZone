@@ -2,9 +2,7 @@ import classes from './AddUsers.module.css'
 import { useAuthContext } from "../../hooks/useAuthContext";
 import React, { useState } from "react";
 
-
 const AddUserDetails = ({resultArray}) => {
-
     const {user} = useAuthContext()
     const storecode = user.storecode
     const [userChange, setUserChange] = useState('');

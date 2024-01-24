@@ -1,17 +1,13 @@
 import { useAuthContext } from '../../hooks/useAuthContext'
-import React, { useEffect, useState,Fragment } from "react";
+import React, {useState,Fragment } from "react";
 import classes from './Notifications.module.css'
 
 const NotificationDetails = ({notification}) => {
-    
     const {user} = useAuthContext()
     const storecode = user.storecode
-
     const notification_id = notification._id
-
     const [message, setMessage] = useState('')
     const [error, setError] = useState(null)
-
     const handleSubmit = async (e) =>{
         e.preventDefault()
         const response = await fetch('http://localhost:4000/notifications/delete', {
@@ -22,8 +18,7 @@ const NotificationDetails = ({notification}) => {
             'Authorisation':`Bearer ${user.token}`
             }
         })
-        const json = await response.json()
-
+        //const json = await response.json()
         if (!response.ok) {
             setMessage('')
             setError("Server Error Connection")

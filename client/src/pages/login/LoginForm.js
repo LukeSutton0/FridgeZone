@@ -1,6 +1,5 @@
 import React, { Fragment ,useState} from "react";
 import { useLogin } from "../../hooks/useLogin";
-
 import classes from './Login.module.css'
 
 const LoginForm = () => {
@@ -40,7 +39,6 @@ const LoginForm = () => {
             </div>
         </Fragment>
     )
-
 }
 
 export default LoginForm;

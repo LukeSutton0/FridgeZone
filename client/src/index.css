@@ -7,31 +7,24 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
-}
-
 .content{
   min-height: 75vh;
 }
 
-button, input[type="button"], input[type="submit"] { 
+button { 
   border-radius: 8px;
   transition-duration: 0.4s;
   cursor: pointer;
   background-color: #0d6efd; 
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   color: white;
   border: none;
   margin: 1px;
   margin-bottom: 2px;
-
-
 } 
 
 button:hover { 
   background-color: #083d8e; 
-
 } 
 
 @media (max-width: 700px) {

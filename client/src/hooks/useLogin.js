@@ -11,7 +11,6 @@ export const useLogin = () =>{
     const login = async(username,password,jobtitle,fullname) => {
         setIsLoading(true)
         setError(null)
-
         try{
             const response = await fetch('http://localhost:4000/user/login',{
                 method: "POST",

@@ -9,15 +9,11 @@ import RemoveUser from "./RemoveUser.js"
 
 
 const AdminDash = () => { 
-
-
     const {user} = useAuthContext()
     const [sectionOpen,setSectionOpen] = useState(null)
     const handleClick = (param) =>{
         setSectionOpen(param)
     }
-
-
     return(
         <Fragment>
             <h1>Admin Dashboard</h1>            
@@ -26,10 +22,8 @@ const AdminDash = () => {
             <button onClick={() => handleClick('ChangeRole')}>Change Role</button>
             {sectionOpen === 'ChangeRole' && <ChangeRole />}
             <button onClick={() => handleClick('RemoveUser')}>Remove User</button>
-            {sectionOpen === 'RemoveUser' && <RemoveUser />}
-            
+            {sectionOpen === 'RemoveUser' && <RemoveUser />} 
         </Fragment>
-        
     )
 }
 

@@ -1,4 +1,4 @@
-import React, { Fragment, useState } from "react";
+import React, {Fragment} from "react";
 import classes from './AddStock.module.css'
 import StockForm from "./AddStockForm.js";
 

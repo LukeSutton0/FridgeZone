@@ -22,8 +22,7 @@ const CreateHealthForm = () => {
         'Authorisation':`Bearer ${user.token}`
       }
     })
-    const json = await response.json()
-
+    //const json = await response.json()
     if (!response.ok) {
         setError("Ensure connection is stable")
       }
@@ -33,9 +32,7 @@ const CreateHealthForm = () => {
       setError(null)
       //console.log('New stock added:', json)
     }
-
   }
-
   return (
     <Fragment>
       <form onSubmit={handleSubmit}> 

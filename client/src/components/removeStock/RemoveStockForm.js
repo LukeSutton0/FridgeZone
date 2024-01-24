@@ -1,5 +1,5 @@
 import classes from './RemoveStock.module.css'
-import React, { Fragment, useState } from "react";
+import React, {useState } from "react";
 import { useAuthContext } from "../../hooks/useAuthContext";
 
 const RemoveStockDetails = ({stock}) => {
@@ -7,7 +7,6 @@ const RemoveStockDetails = ({stock}) => {
     const storecode = user.storecode
     const [quantityToRemove, setQuantityToRemove] = useState('');
     const stock_id = stock._id
-
     const [message, setMessage] = useState('')
     const [error, setError] = useState(null)
 
@@ -34,9 +33,7 @@ const RemoveStockDetails = ({stock}) => {
         setQuantityToRemove('')
         //console.log('New stock added:', json)
         }
-            console.log("test")
     }
-
     return (
             <form onSubmit={handleSubmit} className={classes.stockRemoveIndividual}>
                 <div>
