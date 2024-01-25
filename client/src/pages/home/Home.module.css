@@ -20,8 +20,6 @@
     font-weight: bolder;
 }
 
-
-
 .homeFunctionDivBox{
     width: 100%;
 }
@@ -57,7 +55,7 @@
 }
 
 .linkHealth {
-    height: 60px;
+    height: auto;
 }
 
 .link:hover {

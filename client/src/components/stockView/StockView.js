@@ -48,7 +48,7 @@ const StockView = () => {
 
   return (
     <Fragment>
-        <div className={classes.stockDetails}>
+        <div className={classes.stockDetails} data-testid="StockView">
           <div className={classes.stockViewHeaderDiv}>
             <h1>Current Stock</h1>
             <button onClick={handleClick}>Refresh</button>

@@ -95,28 +95,28 @@ const Home = () => {
                             <p>Options Available:</p>
                             <ul className={classes.sideBarUnList}>
                             {(user.jobtitle === "HeadChef") && (
-                                <li className={classes.link}><Link to="Notifications" spy={true} offset={-200}>Notifications</Link></li>
+                                <Link to="Notifications" spy={true} offset={-200}><li className={classes.link}>Notifications</li></Link>
                             )}
                             {(user.jobtitle === "HeadChef") && (
-                                <li className={classes.link}><Link to="AddUsers" spy={true} offset={-200}>Add Users</Link></li>
+                                <Link to="AddUsers" spy={true} offset={-200}><li className={classes.link}>Add Users</li></Link>
                             )}
                             {(user.jobtitle === "HeadChef" || user.jobtitle === "DeliveryDriver") && (
-                                <li className={classes.link}><Link to="OpenDoor" spy={true} offset={-200}>Open Door</Link></li>
+                                <Link to="OpenDoor" spy={true} offset={-200}><li className={classes.link}>Open Door</li></Link>
                             )}
                             {(user.jobtitle === "HeadChef" || user.jobtitle === "Chef") && (
-                                <li className={classes.link}><Link to="StockView" spy={true} offset={-200}>View Stock</Link></li>
+                                <Link to="StockView" spy={true} offset={-200}><li className={classes.link}>View Stock</li></Link>
                             )}
                             {(user.jobtitle === "HeadChef" || user.jobtitle === "DeliveryDriver") && (
-                               <li className={classes.link}><Link to="AddStock" spy={true} offset={-200}>Add Stock</Link></li>
+                               <Link to="AddStock" spy={true} offset={-200}><li className={classes.link}>Add Stock</li></Link>
                             )}
                             {(user.jobtitle === "HeadChef" || user.jobtitle === "Chef") && (
-                                <li className={classes.link}><Link to="RemoveStock" spy={true} offset={-200}>Remove Stock</Link></li>
+                                <Link to="RemoveStock" spy={true} offset={-200}><li className={classes.link}>Remove Stock</li></Link>
                             )}
                             {(user.jobtitle === "HeadChef" || user.jobtitle === "HealthAndSafetyOfficer") && (
-                                <li className={`${classes.link} ${classes.linkHealth}`}><Link to="HealthAndSafety" spy={true} offset={-200}>Health And Safety Report</Link></li>
+                                <Link to="HealthAndSafety" spy={true} offset={-200}><li className={`${classes.link} ${classes.linkHealth}`}>Health And Safety Report</li></Link>
                             )}
                             {(user.jobtitle === "HeadChef") && (
-                                <li className={`${classes.link} ${classes.linkAdmin}`}><Link to="AdminDash" spy={true} offset={-200}>Admin Dash</Link></li>
+                                <Link to="AdminDash" spy={true} offset={-200}><li className={`${classes.link} ${classes.linkAdmin}`}>Admin Dash</li></Link>
                             )}
                             </ul>
                         </div>
